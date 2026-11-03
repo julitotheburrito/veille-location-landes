@@ -8,15 +8,16 @@
     "Léon",
     "Messanges",
     "Vielle-Saint-Girons",
-    "Magescq"
+    "Magescq",
+    "Seignosse"
   ],
   "types": [
     "maison",
     "appartement"
   ],
-  "loyer_max": null,
+  "loyer_max": 1000,
   "pieces_min": null,
-  "chambres_min": 3,
+  "chambres_min": 2,
   "surface_min": null,
   "meuble": false,
   "exclure_saisonnier": true
