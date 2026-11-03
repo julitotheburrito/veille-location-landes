@@ -4,21 +4,22 @@
 2. Ouvre ton nouveau bot et envoie-lui « /start ».
 3. Lance : python scraper/telegram_setup.py   (depuis le dossier du projet)
 
-Le token est tapé ici, envoyé directement dans les « secrets » GitHub du dépôt
+Le token est collé ici, envoyé directement dans les « secrets » GitHub du dépôt
 avec la commande gh, et n'est jamais écrit dans un fichier.
 """
-import getpass
 import subprocess
 import sys
 
 import httpx
 
-token = getpass.getpass("Token du bot (il ne s'affiche pas quand tu tapes) : ").strip()
+# input() plutôt que getpass : le collage (Ctrl+V / clic droit) ne passe pas toujours dans un champ masqué.
+token = input("Colle le token du bot puis Entrée : ").strip().strip('"\'')
+print(f"Token reçu : {len(token)} caractères (normal : environ 46).")
 base = f"https://api.telegram.org/bot{token}/"
 
 moi = httpx.get(base + "getMe", timeout=20).json()
 if not moi.get("ok"):
-    sys.exit("Token refusé par Telegram. Vérifie-le auprès de @BotFather.")
+    sys.exit("Token refusé par Telegram. Si tu as fait /revoke, utilise le NOUVEAU token donné par @BotFather.")
 
 maj = httpx.get(base + "getUpdates", timeout=20).json().get("result", [])
 chats = {u["message"]["chat"]["id"] for u in maj if "message" in u}
