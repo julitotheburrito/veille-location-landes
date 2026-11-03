@@ -31,7 +31,7 @@
           <legend>Communes</legend>
           <div id="communes" class="communes"></div>
           <div class="communes__raccourcis">
-            <button type="button" class="lien" data-communes="miennes">Mes 5 communes</button>
+            <button type="button" class="lien" data-communes="miennes">Mes communes d'alerte</button>
             <button type="button" class="lien" data-communes="toutes">Toutes</button>
           </div>
         </fieldset>
@@ -101,7 +101,10 @@
     <section class="encart" aria-labelledby="titre-alertes">
       <h2 id="titre-alertes">Alertes Telegram</h2>
       <p id="resume-criteres" class="encart__texte"></p>
-      <a id="modifier-criteres" class="lien-fleche" href="#" target="_blank" rel="noopener">Modifier les critères d'alerte</a>
+      <p class="encart__texte">Les filtres ne changent que l'affichage. Pour être alerté selon les filtres actuels :</p>
+      <button type="button" class="bouton" id="vers-alertes">Utiliser ces filtres pour mes alertes</button>
+      <p class="encart__aide" id="aide-alertes" hidden>Une page GitHub s'ouvre : clique sur <strong>Create</strong>. Telegram te confirme le changement en moins d'une minute.</p>
+      <p class="encart__aide" id="ecart-alertes" hidden></p>
     </section>
 
     <section class="encart" aria-labelledby="titre-ailleurs">

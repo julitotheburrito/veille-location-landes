@@ -40,4 +40,5 @@ jobs:
           git config user.name "veille-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Annonces mises à jour"
+          git pull --rebase
           git push

@@ -190,11 +190,12 @@ function afficher() {
   const pastille = $("#nb-filtres");
   pastille.hidden = nbFiltres === 0;
   pastille.textContent = nbFiltres;
+  majBoutonAlertes(v);
 }
 
 function construireCommunes() {
   const miennes = criteres.villes || [];
-  const autres = [...new Set(donnees.annonces.map((a) => a.ville))]
+  const autres = [...new Set(donnees.communes || donnees.annonces.map((a) => a.ville))]
     .filter((x) => !miennes.some((m) => cle(m) === cle(x)))
     .sort((a, b) => a.localeCompare(b, "fr"));
   const compte = (ville) => donnees.annonces.filter((a) => a.actif && cle(a.ville) === cle(ville)).length;
@@ -229,9 +230,49 @@ function resumeCriteres(c) {
     c.exclure_saisonnier ? "hors saisonnier" : null,
   ].filter(Boolean);
   $("#resume-criteres").textContent = "Une notification pour chaque nouvelle annonce : " + morceaux.join(" · ") + ".";
-  const lien = $("#modifier-criteres");
-  if (depot) lien.href = `https://github.com/${depot.proprio}/${depot.nom}/edit/main/docs/criteres.json`;
-  else lien.hidden = true;
+}
+
+// Filtres affichés -> critères d'alerte (même forme que docs/criteres.json).
+function filtresVersCriteres(v) {
+  const toutes = [...formulaire.querySelectorAll('input[name="ville"]')].map((cb) => cb.value);
+  const n = (x) => (x === "" ? null : Number(x));
+  return {
+    villes: v.villes.length ? v.villes : toutes,
+    types: v.type ? [v.type] : ["maison", "appartement"],
+    loyer_max: n(v.loyer_max),
+    pieces_min: n(v.pieces_min),
+    chambres_min: n(v.chambres_min),
+    surface_min: n(v.surface_min),
+    meuble: v.meuble === "oui" ? true : v.meuble === "non" ? false : null,
+    exclure_saisonnier: v.sans_saison,
+  };
+}
+
+function memesCriteres(a, b) {
+  const norme = (c) => JSON.stringify({ ...c, _aide: undefined, villes: [...c.villes].map(cle).sort(), types: [...c.types].sort() });
+  return norme(a) === norme(b);
+}
+
+function envoyerVersAlertes() {
+  const c = filtresVersCriteres(lireFormulaire());
+  const corps = "Envoyé depuis l'interface. Clique sur **Create** (ou **Submit new issue**) pour appliquer ces critères à tes alertes Telegram.\n\n```json\n" + JSON.stringify(c, null, 2) + "\n```\n";
+  const url = `https://github.com/${depot.proprio}/${depot.nom}/issues/new?title=${encodeURIComponent("Critères d'alerte")}&body=${encodeURIComponent(corps)}`;
+  window.open(url, "_blank", "noopener");
+  $("#aide-alertes").hidden = false;
+}
+
+function majBoutonAlertes(v) {
+  const bouton = $("#vers-alertes"), ecart = $("#ecart-alertes");
+  if (!depot) {
+    bouton.disabled = true;
+    ecart.hidden = false;
+    ecart.textContent = "Disponible seulement sur la page en ligne (GitHub Pages).";
+    return;
+  }
+  const identiques = criteres.villes && memesCriteres(filtresVersCriteres(v), criteres);
+  bouton.disabled = identiques;
+  ecart.hidden = false;
+  ecart.textContent = identiques ? "Les filtres actuels sont déjà tes critères d'alerte." : "Les filtres actuels diffèrent de tes critères d'alerte.";
 }
 
 async function etat() {
@@ -279,6 +320,7 @@ formulaire.addEventListener("reset", () => setTimeout(() => {
 formulaire.addEventListener("submit", (e) => e.preventDefault());
 $("#tri").addEventListener("change", afficher);
 $("#reprendre").addEventListener("click", () => { remplirFormulaire(filtresDepuisCriteres(criteres)); afficher(); });
+$("#vers-alertes").addEventListener("click", envoyerVersAlertes);
 document.querySelectorAll("[data-communes]").forEach((b) => b.addEventListener("click", () => {
   const miennes = (criteres.villes || []).map(cle);
   for (const cb of formulaire.querySelectorAll('input[name="ville"]')) {

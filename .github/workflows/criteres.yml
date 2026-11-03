@@ -1,0 +1,61 @@
+name: criteres
+
+# Déclenché par le bouton « Utiliser ces filtres pour mes alertes » de l'interface,
+# qui ouvre une issue pré-remplie. Seules les issues du propriétaire du dépôt sont prises en compte.
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: veille
+  cancel-in-progress: false
+
+jobs:
+  criteres:
+    if: github.event.issue.user.login == github.repository_owner && startsWith(github.event.issue.title, 'Critères d''alerte')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scraper/requirements.txt
+
+      - run: pip install -r scraper/requirements.txt
+
+      - name: Vérifier et appliquer les critères
+        id: appliquer
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scraper/appliquer_criteres.py
+
+      - name: Enregistrer
+        run: |
+          git add docs/criteres.json
+          if git diff --cached --quiet; then echo "Critères inchangés."; exit 0; fi
+          git config user.name "veille-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Critères d'alerte modifiés depuis l'interface (#${{ github.event.issue.number }})"
+          git pull --rebase
+          git push
+
+      - name: Fermer l'issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RESULTAT: ${{ steps.appliquer.outcome }}
+        run: |
+          if [ "$RESULTAT" = "success" ]; then
+            gh issue close ${{ github.event.issue.number }} --repo ${{ github.repository }} --comment "✅ Critères appliqués. L'interface les affiche d'ici quelques minutes."
+          else
+            gh issue comment ${{ github.event.issue.number }} --repo ${{ github.repository }} --body "❌ Critères refusés : voir le détail dans l'onglet Actions."
+          fi

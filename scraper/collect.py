@@ -272,7 +272,7 @@ def main():
             nouvelles[id_] = a
 
     annonces = sorted(nouvelles.values(), key=lambda a: (a.get("publie") or a["vu_le"]), reverse=True)
-    donnees = {"maj": t, "sources": etat_sources, "annonces": annonces}
+    donnees = {"maj": t, "communes": [c[0] for c in COMMUNES], "sources": etat_sources, "annonces": annonces}
 
     # On n'écrit que si quelque chose a vraiment changé (évite un commit toutes les 10 min).
     comparable = lambda d: json.dumps({**d, "maj": None, "sources": {k: {**v, "ok_le": None} for k, v in d.get("sources", {}).items()}}, sort_keys=True)

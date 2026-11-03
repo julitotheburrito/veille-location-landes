@@ -125,6 +125,9 @@ h1 { margin: 0; font-size: clamp(28px, 4vw, 40px); font-weight: 700; font-stretc
 .encart { padding: 16px; border: 1px solid var(--trait); border-radius: var(--rayon); }
 .encart h2 { margin: 0 0 6px; font-size: 15px; }
 .encart__texte { margin: 0 0 10px; color: var(--discret); font-size: 14px; }
+.encart .bouton { width: 100%; }
+.encart__aide { margin: 10px 0 0; font-size: 13px; color: var(--discret); }
+.encart__aide strong { color: var(--encre); }
 .lien-fleche { color: var(--pin); font-size: 14px; font-weight: 600; text-underline-offset: 3px; }
 .lien-fleche::after { content: " →"; }
 .liens-externes { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
