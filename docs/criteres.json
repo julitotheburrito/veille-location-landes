@@ -1,0 +1,11 @@
+{
+  "_aide": "Critères des ALERTES Telegram. null = pas de limite. meuble : null (indifférent), true (meublé seulement), false (vide seulement).",
+  "villes": ["Moliets-et-Maa", "Soustons", "Vieux-Boucau-les-Bains", "Linxe", "Léon"],
+  "types": ["maison", "appartement"],
+  "loyer_max": null,
+  "pieces_min": null,
+  "chambres_min": null,
+  "surface_min": null,
+  "meuble": null,
+  "exclure_saisonnier": false
+}

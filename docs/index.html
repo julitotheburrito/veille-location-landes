@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Locations à l'année · Landes</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232E5A43'/%3E%3Cpath d='M8 16l8-7 8 7v8H8z' fill='%23F5F2EA'/%3E%3C/svg%3E">
+</head>
+<body>
+<header class="entete">
+  <div class="entete__titre">
+    <p class="surtitre">Veille · côte sud des Landes</p>
+    <h1>Locations à l'année</h1>
+  </div>
+  <p class="etat" id="etat" aria-live="polite">Chargement…</p>
+</header>
+
+<div class="mise-en-page">
+  <aside class="panneau">
+    <details class="filtres" id="filtres-details" open>
+      <summary class="filtres__resume">
+        <span>Filtres</span><span class="compteur" id="nb-filtres" hidden></span>
+      </summary>
+      <form id="filtres" class="filtres__corps" autocomplete="off">
+        <fieldset class="groupe">
+          <legend>Communes</legend>
+          <div id="communes" class="communes"></div>
+          <div class="communes__raccourcis">
+            <button type="button" class="lien" data-communes="miennes">Mes 5 communes</button>
+            <button type="button" class="lien" data-communes="toutes">Toutes</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="groupe">
+          <legend>Type</legend>
+          <div class="segment" data-champ="type">
+            <label><input type="radio" name="type" value="" checked><span>Tout</span></label>
+            <label><input type="radio" name="type" value="maison"><span>Maison</span></label>
+            <label><input type="radio" name="type" value="appartement"><span>Appart.</span></label>
+          </div>
+        </fieldset>
+
+        <div class="groupe">
+          <label class="etiquette" for="loyer_max">Loyer max (charges comprises)</label>
+          <div class="champ-unite"><input type="number" id="loyer_max" name="loyer_max" inputmode="numeric" min="0" step="50" placeholder="Sans limite"><span>€</span></div>
+        </div>
+
+        <fieldset class="groupe">
+          <legend>Pièces minimum</legend>
+          <div class="segment" data-champ="pieces_min">
+            <label><input type="radio" name="pieces_min" value="" checked><span>Tout</span></label>
+            <label><input type="radio" name="pieces_min" value="2"><span>2</span></label>
+            <label><input type="radio" name="pieces_min" value="3"><span>3</span></label>
+            <label><input type="radio" name="pieces_min" value="4"><span>4</span></label>
+            <label><input type="radio" name="pieces_min" value="5"><span>5+</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="groupe">
+          <legend>Chambres minimum</legend>
+          <div class="segment" data-champ="chambres_min">
+            <label><input type="radio" name="chambres_min" value="" checked><span>Tout</span></label>
+            <label><input type="radio" name="chambres_min" value="1"><span>1</span></label>
+            <label><input type="radio" name="chambres_min" value="2"><span>2</span></label>
+            <label><input type="radio" name="chambres_min" value="3"><span>3</span></label>
+            <label><input type="radio" name="chambres_min" value="4"><span>4+</span></label>
+          </div>
+        </fieldset>
+
+        <div class="groupe">
+          <label class="etiquette" for="surface_min">Surface minimum</label>
+          <div class="champ-unite"><input type="number" id="surface_min" name="surface_min" inputmode="numeric" min="0" step="5" placeholder="Sans limite"><span>m²</span></div>
+        </div>
+
+        <fieldset class="groupe">
+          <legend>Ameublement</legend>
+          <div class="segment" data-champ="meuble">
+            <label><input type="radio" name="meuble" value="" checked><span>Indifférent</span></label>
+            <label><input type="radio" name="meuble" value="oui"><span>Meublé</span></label>
+            <label><input type="radio" name="meuble" value="non"><span>Vide</span></label>
+          </div>
+        </fieldset>
+
+        <div class="groupe groupe--cases">
+          <label class="case"><input type="checkbox" name="sans_saison"><span>Masquer les locations saisonnières <small>(« de septembre à juin »…)</small></span></label>
+          <label class="case"><input type="checkbox" name="retirees"><span>Montrer les annonces retirées</span></label>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="bouton" id="reprendre">Reprendre mes critères d'alerte</button>
+          <button type="reset" class="bouton bouton--discret">Tout effacer</button>
+        </div>
+      </form>
+    </details>
+
+    <section class="encart" aria-labelledby="titre-alertes">
+      <h2 id="titre-alertes">Alertes Telegram</h2>
+      <p id="resume-criteres" class="encart__texte"></p>
+      <a id="modifier-criteres" class="lien-fleche" href="#" target="_blank" rel="noopener">Modifier les critères d'alerte</a>
+    </section>
+
+    <section class="encart" aria-labelledby="titre-ailleurs">
+      <h2 id="titre-ailleurs">Non couverts ici</h2>
+      <p class="encart__texte">Ces sites bloquent les programmes. Active leurs alertes dans leur appli pour ne rien rater.</p>
+      <ul class="liens-externes" id="liens-externes"></ul>
+    </section>
+  </aside>
+
+  <main class="contenu">
+    <div class="barre">
+      <p class="barre__total" id="total" aria-live="polite"></p>
+      <label class="tri">Trier par
+        <select id="tri">
+          <option value="recent">Plus récentes</option>
+          <option value="loyer-asc">Loyer croissant</option>
+          <option value="loyer-desc">Loyer décroissant</option>
+          <option value="surface-desc">Plus grandes</option>
+        </select>
+      </label>
+    </div>
+    <ol class="liste" id="liste"></ol>
+    <div class="vide" id="vide" hidden>
+      <p><strong>Aucune annonce ne correspond.</strong></p>
+      <p>Élargis un filtre (loyer, pièces, communes) ou attends la prochaine vérification : la veille tourne toutes les 10 minutes.</p>
+    </div>
+  </main>
+</div>
+
+<template id="modele-carte">
+  <li class="carte">
+    <div class="carte__media"><img alt="" loading="lazy" decoding="async"></div>
+    <div class="carte__corps">
+      <div class="carte__haut">
+        <p class="carte__prix"><span class="prix"></span><span class="prix__unite">/mois</span><s class="prix__ancien" hidden></s></p>
+        <ul class="badges"></ul>
+      </div>
+      <h3 class="carte__titre"><a class="carte__lien" target="_blank" rel="noopener"></a></h3>
+      <p class="carte__infos"></p>
+      <p class="carte__extrait"></p>
+      <p class="carte__pied"></p>
+    </div>
+  </li>
+</template>
+
+<script src="app.js" defer></script>
+</body>
+</html>
