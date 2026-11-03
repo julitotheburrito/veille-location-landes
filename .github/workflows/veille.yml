@@ -18,6 +18,8 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main  # la dernière version, pas celle du moment du lancement (sinon un lancement en file d'attente repart de données périmées)
 
       - uses: actions/setup-python@v5
         with:
@@ -40,5 +42,6 @@ jobs:
           git config user.name "veille-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Annonces mises à jour"
-          git pull --rebase
+          # En cas de conflit sur les données, notre relevé (le plus récent) l'emporte.
+          git pull --rebase -X theirs
           git push
