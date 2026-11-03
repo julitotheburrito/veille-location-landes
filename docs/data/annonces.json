@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-03T12:13:42+00:00",
+ "maj": "2026-11-03T14:51:39+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,17 +17,45 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-03T12:13:42+00:00",
+   "ok_le": "2026-11-03T14:51:39+00:00",
    "nb": 18
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-03T12:13:42+00:00",
-   "nb": 12
+   "ok_le": "2026-11-03T14:51:39+00:00",
+   "nb": 13
   }
  },
  "annonces": [
+  {
+   "id": "bienici:laforet-immo-facile-19235590",
+   "source": "Bien'ici",
+   "url": "https://www.bienici.com/annonce/laforet-immo-facile-19235590",
+   "titre": "Appartement T4 meublé avec vue sur le lac de Soustons",
+   "ville": "Soustons",
+   "cp": "40140",
+   "type": "appartement",
+   "loyer": 1290,
+   "pieces": 4,
+   "chambres": 3,
+   "surface": 81.05,
+   "meuble": true,
+   "photo": "https://file.bienici.com/photo/laforet-immo-facile-19235590_media.immo-facile.com_office6_laforet_dax_catalog_images_pr_p_1_9_2_3_5_5_9_0_19235590a.jpg_DATEMAJ_03_11_2026-11_59_09",
+   "publie": "2026-11-03T13:04:30.148Z",
+   "saisonnier": false,
+   "extrait": "Découvrez cet agréable appartement meublé d'environ 80 m², offrant une belle vue sur le lac de Soustons. Il se compose d'une entrée, d'un salon-séjour, d'une cuisine indépendante aménagée et équipée, de trois chambres do",
+   "vu_le": "2026-11-03T10:19:24+00:00",
+   "actif": true,
+   "agence": "Laforêt ST GEOURS DE MAREMME",
+   "tel": "0558565385",
+   "dispo": null,
+   "details": [
+    "agence",
+    "tel",
+    "dispo"
+   ]
+  },
   {
    "id": "orpi:0eed4eec-af00-4d13-8888-4b4cbca1f61e",
    "source": "Orpi",
@@ -46,6 +74,37 @@
    "saisonnier": false,
    "extrait": "Appartement à louer à Soustons vignette-5",
    "vu_le": "2026-11-03T12:13:42+00:00",
+   "actif": true,
+   "agence": "Orpi Mone Martinaud Gestion Soustons",
+   "dispo": null,
+   "tel": "05 58 41 12 90",
+   "details": [
+    "agence",
+    "chambres",
+    "dispo",
+    "meuble",
+    "publie",
+    "tel"
+   ]
+  },
+  {
+   "id": "orpi:3b158f79-be9b-4508-9350-300e3a9c161a",
+   "source": "Orpi",
+   "url": "https://www.orpi.com/annonce-location-maison-t4-soustons-40140-3b158f79-be9b-4508-9350-300e3a9c161a/",
+   "titre": "Maison 4 pièces",
+   "ville": "Soustons",
+   "cp": null,
+   "type": "maison",
+   "loyer": 1650,
+   "pieces": 4,
+   "chambres": 3,
+   "surface": 84.22,
+   "meuble": true,
+   "photo": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/3b158f79-be9b-4508-9350-300e3a9c161a--68a394de-67ba-4255-8c99-aa159c4136e9.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=c5bd3ad85220bb32a071f2550ef7abc08e39d222",
+   "publie": "2026-11-03",
+   "saisonnier": false,
+   "extrait": "Maison à louer à Soustons vignette-6",
+   "vu_le": "2026-11-03T14:51:39+00:00",
    "actif": true,
    "agence": "Orpi Mone Martinaud Gestion Soustons",
    "tel": "05 58 41 12 90",
@@ -79,8 +138,8 @@
    "vu_le": "2026-11-03T12:13:42+00:00",
    "actif": true,
    "agence": "Orpi Adour Ocean",
-   "tel": "05 59 52 95 90",
    "dispo": null,
+   "tel": "05 59 52 95 90",
    "details": [
     "agence",
     "chambres",
@@ -139,34 +198,6 @@
    "actif": true,
    "agence": "AUPA IMMOBILIER",
    "tel": "0587744033",
-   "dispo": null,
-   "details": [
-    "agence",
-    "tel",
-    "dispo"
-   ]
-  },
-  {
-   "id": "bienici:laforet-immo-facile-19235590",
-   "source": "Bien'ici",
-   "url": "https://www.bienici.com/annonce/laforet-immo-facile-19235590",
-   "titre": "Appartement T4 meublé avec vue sur le lac de Soustons",
-   "ville": "Soustons",
-   "cp": "40140",
-   "type": "appartement",
-   "loyer": 1290,
-   "pieces": 4,
-   "chambres": 3,
-   "surface": 81.05,
-   "meuble": true,
-   "photo": "https://file.bienici.com/photo/laforet-immo-facile-19235590_media.immo-facile.com_office6_laforet_dax_catalog_images_pr_p_1_9_2_3_5_5_9_0_19235590a.jpg_DATEMAJ_20_10_2026-10_58_53",
-   "publie": "2026-10-29T13:38:55.445Z",
-   "saisonnier": false,
-   "extrait": "Découvrez cet agréable appartement meublé d'environ 80 m², offrant une belle vue sur le lac de Soustons. Il se compose d'une entrée, d'un salon-séjour, d'une cuisine indépendante aménagée et équipée, de trois chambres do",
-   "vu_le": "2026-11-03T10:19:24+00:00",
-   "actif": true,
-   "agence": "Laforêt ST GEOURS DE MAREMME",
-   "tel": "0558565385",
    "dispo": null,
    "details": [
     "agence",
@@ -418,8 +449,8 @@
    "vu_le": "2026-11-03T12:13:42+00:00",
    "actif": true,
    "agence": "Orpi Tyrosse Immobilier Orpi",
-   "tel": "05 58 77 08 00",
    "dispo": null,
+   "tel": "05 58 77 08 00",
    "details": [
     "agence",
     "chambres",
@@ -561,8 +592,8 @@
    "vu_le": "2026-11-03T12:13:42+00:00",
    "actif": true,
    "agence": "Orpi Mone Martinaud Gestion Soustons",
-   "tel": "05 58 41 12 90",
    "dispo": null,
+   "tel": "05 58 41 12 90",
    "details": [
     "agence",
     "chambres",
@@ -648,8 +679,8 @@
    "vu_le": "2026-11-03T12:13:42+00:00",
    "actif": true,
    "agence": "Orpi Mone Martinaud Gestion Soustons",
-   "tel": "05 58 41 12 90",
    "dispo": null,
+   "tel": "05 58 41 12 90",
    "details": [
     "agence",
     "chambres",
@@ -679,8 +710,8 @@
    "vu_le": "2026-11-03T12:13:42+00:00",
    "actif": true,
    "agence": "Orpi Agence Du Centre",
-   "tel": "05 58 74 19 14",
    "dispo": null,
+   "tel": "05 58 74 19 14",
    "details": [
     "agence",
     "chambres",
@@ -710,8 +741,8 @@
    "vu_le": "2026-11-03T12:13:42+00:00",
    "actif": true,
    "agence": "Orpi Adour Ocean",
-   "tel": "05 59 52 95 90",
    "dispo": null,
+   "tel": "05 59 52 95 90",
    "details": [
     "agence",
     "chambres",
@@ -734,7 +765,7 @@
    "chambres": 2,
    "surface": 46,
    "meuble": true,
-   "photo": "https://file.bienici.com/photo/ag400954-548295530_photos.ubiflow.net_400954_548295530_photos_1.jpg_INSOON_EB_5512801818_20260904200752",
+   "photo": "https://file.bienici.com/photo/ag400954-548295530_photos.ubiflow.net_400954_548295530_photos_1.jpg_INSOON_EB_5512801818_20261103120955",
    "publie": "2026-09-04T19:08:41.484Z",
    "saisonnier": false,
    "extrait": "Il comprend, une cuisine aménagée et équipée, une salle d'eau avec wc, un séjour avec canapé et meuble tv, une chambre avec dressing, et une une chambre avec lit double. Place de parking au pied de l'appartement. Se trou",
@@ -769,8 +800,8 @@
    "vu_le": "2026-11-03T12:13:42+00:00",
    "actif": true,
    "agence": "Orpi Agence J P Bouquet",
-   "tel": "05 58 48 13 50",
    "dispo": null,
+   "tel": "05 58 48 13 50",
    "details": [
     "agence",
     "chambres",
@@ -800,8 +831,8 @@
    "vu_le": "2026-11-03T12:13:42+00:00",
    "actif": true,
    "agence": "Orpi Mone Martinaud Gestion Soustons",
-   "tel": "05 58 41 12 90",
    "dispo": null,
+   "tel": "05 58 41 12 90",
    "details": [
     "agence",
     "chambres",
@@ -831,8 +862,8 @@
    "vu_le": "2026-11-03T12:13:42+00:00",
    "actif": true,
    "agence": "Orpi Mone Martinaud Gestion Soustons",
-   "tel": "05 58 41 12 90",
    "dispo": null,
+   "tel": "05 58 41 12 90",
    "details": [
     "agence",
     "chambres",
@@ -862,8 +893,8 @@
    "vu_le": "2026-11-03T12:13:42+00:00",
    "actif": true,
    "agence": "Orpi Leray Immobilier",
-   "tel": "05 58 04 21 50",
    "dispo": null,
+   "tel": "05 58 04 21 50",
    "details": [
     "agence",
     "chambres",
@@ -893,8 +924,8 @@
    "vu_le": "2026-11-03T12:13:42+00:00",
    "actif": true,
    "agence": "Orpi Agence Durand",
-   "tel": "05 58 41 79 20",
    "dispo": null,
+   "tel": "05 58 41 79 20",
    "details": [
     "agence",
     "chambres",
