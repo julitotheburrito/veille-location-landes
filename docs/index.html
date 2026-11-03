@@ -7,17 +7,18 @@
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=3">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232E5A43'/%3E%3Cpath d='M8 16l8-7 8 7v8H8z' fill='%23F5F2EA'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23161513'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='700' text-anchor='middle' fill='%23F4F1EA'%3EL%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 <header class="entete">
-  <div class="entete__titre">
-    <p class="surtitre">Veille · côte sud des Landes</p>
-    <h1>Locations à l'année</h1>
-  </div>
-  <p class="etat" id="etat" aria-live="polite">Chargement…</p>
+  <h1>Locations à l'année</h1>
+  <p class="entete__ligne">
+    <span>Côte sud des Landes</span>
+    <span id="date-du-jour"></span>
+    <span class="etat" id="etat" aria-live="polite">Chargement…</span>
+  </p>
 </header>
 
 <div class="mise-en-page">
@@ -151,6 +152,6 @@
   </li>
 </template>
 
-<script src="app.js?v=3" defer></script>
+<script src="app.js?v=5" defer></script>
 </body>
 </html>

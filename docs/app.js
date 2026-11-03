@@ -29,6 +29,7 @@ function ilYA(iso) {
   const h = Math.round(min / 60);
   if (h < 24) return `il y a ${h} h`;
   const j = Math.round(h / 24);
+  if (j > 60) return "en " + new Date(iso).toLocaleDateString("fr-FR", { month: "long", year: "numeric" });
   return j === 1 ? "hier" : `il y a ${j} jours`;
 }
 
@@ -201,7 +202,7 @@ function afficher() {
   const nbFiltres = [v.type, v.loyer_max, v.pieces_min, v.chambres_min, v.surface_min, v.meuble].filter(Boolean).length + (v.sans_saison ? 1 : 0);
   const pastille = $("#nb-filtres");
   pastille.hidden = nbFiltres === 0;
-  pastille.textContent = nbFiltres;
+  pastille.textContent = `${nbFiltres} actif${nbFiltres > 1 ? "s" : ""}`;
   majBoutonAlertes(v);
 }
 
@@ -299,11 +300,10 @@ async function etat() {
   const enPanne = Object.entries(donnees.sources).filter(([, s]) => s.echecs > 0).map(([n]) => n);
   ok = ok && enPanne.length === 0;
   const el = $("#etat");
-  el.innerHTML = `<span class="pastille${ok ? "" : " pastille--ko"}"></span>`;
-  el.append(ok ? "Vérifié " : "Problème · vérifié ");
+  el.classList.toggle("etat--ko", !ok);
   const b = document.createElement("strong");
   b.textContent = ilYA(derniere);
-  el.append(b, enPanne.length ? ` · source en panne : ${enPanne.join(", ")}` : " · toutes les 10 min");
+  el.replaceChildren(ok ? "vérifié " : "problème · vérifié ", b, enPanne.length ? ` · source en panne : ${enPanne.join(", ")}` : "");
 }
 
 async function charger() {
@@ -340,6 +340,8 @@ document.querySelectorAll("[data-communes]").forEach((b) => b.addEventListener("
   }
   afficher();
 }));
+
+$("#date-du-jour").textContent = new Date().toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long" });
 
 // Filtres repliés par défaut sur téléphone.
 if (matchMedia("(max-width: 899px)").matches) $("#filtres-details").open = false;
