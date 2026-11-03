@@ -23,6 +23,11 @@ FICHIER_DONNEES = RACINE / "docs" / "data" / "annonces.json"
 FICHIER_CRITERES = RACINE / "docs" / "criteres.json"
 
 UA = "Mozilla/5.0 (compatible; veille-location-landes; usage personnel)"
+try:
+    from zoneinfo import ZoneInfo
+    PARIS = ZoneInfo("Europe/Paris")
+except Exception:  # Windows sans le paquet tzdata
+    PARIS = timezone(timedelta(hours=1))
 GARDER_RETIREES = timedelta(days=14)
 ALERTE_APRES_ECHECS = 3
 
@@ -159,9 +164,26 @@ def source_pap(client):
     return annonces
 
 
+def details_bienici(client, a):
+    """Agence, téléphone et disponibilité, tels qu'affichés sur la fiche de l'annonce."""
+    r = client.get("https://www.bienici.com/realEstateAd.json", params={"id": a["id"].split(":", 1)[1]})
+    r.raise_for_status()
+    d = r.json()
+    contact = d.get("contactRelativeData") or {}
+    dispo = d.get("availableDate")
+    return {
+        "agence": contact.get("agencyNameToDisplay") or contact.get("contactNameToDisplay"),
+        "tel": contact.get("phoneToDisplay"),
+        "dispo": dispo[:10] if dispo and not dispo.startswith("1970") else None,
+    }
+
+
 # PAP (derrière Cloudflare) refuse les programmes depuis novembre 2026 : en pause.
 # On ne contourne pas ce blocage ; remettre "pap": source_pap s'il se lève.
 SOURCES = {"bienici": source_bienici}
+DETAILS = {"bienici": details_bienici}
+CHAMPS_DETAILS = ("agence", "tel", "dispo")
+DETAILS_PAR_PASSAGE = 25  # fiches détaillées demandées au plus par vérification (politesse)
 
 
 # --- Critères & alertes ----------------------------------------------------
@@ -199,8 +221,14 @@ def message(a):
         f"<b>{fmt(a['loyer'], ' €')}/mois</b> — {html.escape(a['ville'])}",
         f"{html.escape(a['type'].capitalize())} · {infos}" if infos else html.escape(a["type"].capitalize()),
     ]
+    if a.get("dispo"):
+        jour = datetime.fromisoformat(a["dispo"]).date()
+        lignes.append("Disponible tout de suite" if jour <= datetime.now(PARIS).date() else "Disponible le " + jour.strftime("%d/%m/%Y"))
     if a.get("saisonnier"):
         lignes.append("⚠️ Peut-être saisonnière (à vérifier)")
+    if a.get("tel") or a.get("agence"):
+        # Telegram rend le numéro cliquable : on appelle directement depuis la notification.
+        lignes.append("📞 " + " — ".join(html.escape(x, quote=False) for x in (a.get("tel"), a.get("agence")) if x))
     lignes.append(f'<a href="{a["url"]}">Voir l\'annonce sur {a["source"]}</a>')
     return "\n".join(lignes)
 
@@ -220,6 +248,22 @@ def telegram(texte, photo=None):
         print("Échec Telegram :", r.status_code, r.text[:200], file=sys.stderr)
 
 
+def bilan(annonces, sources, criteres, t):
+    actives = [a for a in annonces if a.get("actif")]
+    ok = [a for a in actives if correspond(a, criteres)]
+    semaine = (datetime.fromisoformat(t) - timedelta(days=7)).isoformat()
+    neuves = [a for a in actives if a["vu_le"] > semaine]
+    pannes = [n for n, s in sources.items() if s.get("echecs")]
+    lignes = [
+        "✅ <b>Veille OK</b> — bilan du lundi",
+        f"{len(actives)} annonces suivies, dont {len(ok)} qui collent à tes critères.",
+        f"{len(neuves)} nouvelle(s) repérée(s) cette semaine.",
+        "⚠️ Source en panne : " + ", ".join(pannes) if pannes else "Sources : toutes répondent.",
+        "Pas de bilan lundi prochain = la veille est arrêtée : préviens-moi.",
+    ]
+    return "\n".join(lignes)
+
+
 # --- Programme principal ---------------------------------------------------
 
 def main():
@@ -229,7 +273,8 @@ def main():
     criteres = json.loads(FICHIER_CRITERES.read_text(encoding="utf-8"))
     t = maintenant()
 
-    alertes, nouvelles = [], {}
+    alertes, baisses, nouvelles = [], [], {}
+    budget_details = DETAILS_PAR_PASSAGE
     with httpx.Client(headers={"User-Agent": UA, "Accept-Language": "fr-FR,fr;q=0.9"}, timeout=40) as client:
         for nom, fonction in SOURCES.items():
             etat = etat_sources.setdefault(nom, {"echecs": 0})
@@ -251,13 +296,25 @@ def main():
                 vieille = anciennes.get(a["id"])
                 a["vu_le"] = vieille["vu_le"] if vieille else t
                 a["actif"] = True
-                if vieille and vieille.get("loyer") and a.get("loyer") and a["loyer"] < vieille["loyer"]:
+                baisse = bool(vieille and vieille.get("loyer") and a.get("loyer") and a["loyer"] < vieille["loyer"])
+                if baisse:
                     a["ancien_loyer"] = vieille["loyer"]
                 elif vieille and vieille.get("ancien_loyer"):
                     a["ancien_loyer"] = vieille["ancien_loyer"]
+                # Fiche détaillée (agence, téléphone) : demandée une seule fois par annonce.
+                if vieille and "agence" in vieille:
+                    a.update({k: vieille.get(k) for k in CHAMPS_DETAILS})
+                elif nom in DETAILS and budget_details > 0:
+                    budget_details -= 1
+                    try:
+                        a.update(DETAILS[nom](client, a))
+                    except Exception as e:  # sans fiche, l'alerte part quand même
+                        print(f"[{nom}] fiche {a['id']} indisponible : {e}", file=sys.stderr)
                 nouvelles[a["id"]] = a
                 if not vieille and not premiere_fois and correspond(a, criteres):
                     alertes.append(a)
+                elif baisse and correspond(a, criteres):
+                    baisses.append(a)
 
     # Annonces disparues : gardées « retirées » quelque temps, sauf si leur source a échoué.
     sources_ok = {n for n, e in etat_sources.items() if e.get("ok_le") == t}
@@ -272,7 +329,17 @@ def main():
             nouvelles[id_] = a
 
     annonces = sorted(nouvelles.values(), key=lambda a: (a.get("publie") or a["vu_le"]), reverse=True)
-    donnees = {"maj": t, "communes": [c[0] for c in COMMUNES], "sources": etat_sources, "annonces": annonces}
+    donnees = {"maj": t, "communes": [c[0] for c in COMMUNES], "sources": etat_sources, "annonces": annonces,
+               "sante": ancien.get("sante")}
+
+    # Bilan du lundi matin : s'il n'arrive pas, c'est que la veille est arrêtée.
+    # Il est aussi enregistré dans les données, ce qui fait un commit par semaine
+    # (GitHub suspend les tâches planifiées d'un dépôt inactif depuis 60 jours).
+    local = datetime.now(PARIS)
+    semaine = "{}-S{:02d}".format(*local.isocalendar()[:2])
+    if local.weekday() == 0 and local.hour >= 9 and donnees["sante"] != semaine:
+        donnees["sante"] = semaine
+        telegram(bilan(annonces, etat_sources, criteres, t))
 
     # On n'écrit que si quelque chose a vraiment changé (évite un commit toutes les 10 min).
     comparable = lambda d: json.dumps({**d, "maj": None, "sources": {k: {**v, "ok_le": None} for k, v in d.get("sources", {}).items()}}, sort_keys=True)
@@ -283,7 +350,9 @@ def main():
 
     for a in alertes:
         telegram("🏠 <b>Nouvelle annonce</b>\n" + message(a), a.get("photo"))
-    print(f"{len(alertes)} alerte(s) envoyée(s).")
+    for a in baisses:
+        telegram(f"📉 <b>Baisse de loyer</b> : {fmt(a['ancien_loyer'], ' €')} → {fmt(a['loyer'], ' €')}\n" + message(a), a.get("photo"))
+    print(f"{len(alertes)} alerte(s), {len(baisses)} baisse(s) envoyée(s).")
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@ name: veille
 
 on:
   schedule:
-    - cron: "*/10 * * * *"   # toutes les 10 min (GitHub peut retarder de quelques minutes)
+    - cron: "4-59/10 * * * *"  # toutes les 10 min, à :04 :14 :24… (GitHub déconseille les minutes rondes, surchargées)
   workflow_dispatch:          # bouton « Run workflow » pour lancer à la main
 
 permissions:

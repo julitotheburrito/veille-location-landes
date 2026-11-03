@@ -161,6 +161,8 @@ h1 { margin: 0; font-size: clamp(28px, 4vw, 40px); font-weight: 700; font-stretc
 .carte__lien:focus-visible { outline: none; }
 .carte:has(.carte__lien:focus-visible) { outline: 2px solid var(--pin); outline-offset: 2px; }
 .carte__infos { margin: 0; color: var(--encre); font-size: 15px; }
+.carte__contact { margin: 2px 0 0; font-size: 14px; color: var(--discret); }
+.carte__contact a { position: relative; z-index: 1; color: var(--pin); font-weight: 600; text-underline-offset: 3px; }   /* au-dessus du lien de la carte */
 .carte__extrait {
   margin: 4px 0 0; color: var(--discret); font-size: 14px;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;

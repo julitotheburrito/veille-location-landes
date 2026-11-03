@@ -167,10 +167,22 @@ function carte(a) {
     a.surface && `${nombre.format(a.surface)} m²`,
     a.meuble === true ? "meublé" : a.meuble === false ? "vide" : null,
   ].filter(Boolean).join(" · ");
+  if (a.tel || a.agence) {
+    const contact = $(".carte__contact", el);
+    contact.hidden = false;
+    if (a.tel) {
+      const tel = document.createElement("a");
+      tel.href = "tel:" + a.tel.replace(/[^\d+]/g, "");
+      tel.textContent = a.tel;
+      contact.append(tel, a.agence ? " · " : "");
+    }
+    if (a.agence) contact.append(a.agence);
+  }
   $(".carte__extrait", el).textContent = a.extrait || "";
   $(".carte__pied", el).textContent = [
     a.source,
     a.publie ? `publiée ${ilYA(a.publie)}` : `repérée ${ilYA(a.vu_le)}`,
+    a.dispo ? (new Date(a.dispo) <= new Date() ? "dispo tout de suite" : `dispo le ${new Date(a.dispo).toLocaleDateString("fr-FR")}`) : null,
     !a.actif && a.retire_le ? `retirée ${ilYA(a.retire_le)}` : null,
   ].filter(Boolean).join(" · ");
   if (!a.actif) el.classList.add("carte--retiree");
