@@ -178,11 +178,87 @@ def details_bienici(client, a):
     }
 
 
+# Orpi ne publie pas sur Bien'ici. Ses pages « location-immobiliere-<commune> » montrent aussi
+# les communes voisines : ces 6 pages couvrent tout le secteur (les autres redirigent vers les Landes).
+PAGES_ORPI = ["soustons", "leon", "vieux-boucau-les-bains", "linxe", "messanges", "seignosse"]
+
+
+def texte(fragment):
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", fragment or ""))).strip()
+
+
+def source_orpi(client):
+    annonces, reponses = {}, 0
+    for page in PAGES_ORPI:
+        r = client.get(f"https://www.orpi.com/location-immobiliere-{page}/")
+        if r.status_code != 200:  # commune sans page : Orpi redirige
+            continue
+        reponses += 1
+        for carte in re.split(r'data-oncrawl="estate-card"', r.text)[1:]:
+            ref = re.search(r'data-reference="([0-9a-f-]+)"', carte)
+            lien = re.search(r'href="(/annonce-location-(appartement|maison)-[^"?]+)', carte)
+            if not (ref and lien) or re.search(r'price-tag[^>]*>\s*Lou', carte):  # « Loué »
+                continue
+            champ = lambda nom: texte((re.search(r'data-oncrawl="' + nom + r'"[^>]*>(.*?)</span>', carte, re.S) or [None, ""])[1])
+            ville = NOM_PAR_CLE.get(cle(champ("estate-location")))
+            prix = re.sub(r"[^\d]", "", champ("estate-price"))
+            if not ville or not prix:
+                continue
+            tags = [texte(t) for t in re.findall(r'data-oncrawl="estate-tag"[^>]*>(.*?)</li>', carte, re.S)]
+            chambres = next((nombre(t) for t in tags if "chambre" in t), None)
+            pieces = nombre(champ("estate-rooms"))
+            surface = re.search(r"([\d,]+)\s*m", champ("estate-surface"))
+            photo = re.search(r'data-src="([^"]+)"', carte)
+            alt = html.unescape((re.search(r'alt="([^"]*)"', carte) or [None, ""])[1])
+            annonces[ref.group(1)] = {
+                "id": "orpi:" + ref.group(1),
+                "source": "Orpi",
+                "url": "https://www.orpi.com" + lien.group(1),
+                "titre": f"{lien.group(2).capitalize()} {int(pieces)} pièces" if pieces else lien.group(2).capitalize(),
+                "ville": ville,
+                "cp": None,
+                "type": lien.group(2),
+                "loyer": int(prix),
+                "pieces": int(pieces) if pieces else None,
+                "chambres": int(chambres) if chambres else None,
+                "surface": float(surface.group(1).replace(",", ".")) if surface else None,
+                "meuble": True if any("meubl" in t.lower() for t in tags) else None,
+                "photo": html.unescape(photo.group(1)) if photo else None,
+                "publie": None,
+                "saisonnier": est_saisonnier(alt),
+                "extrait": alt[:220],
+            }
+    if not reponses:
+        raise RuntimeError("aucune page Orpi n'a répondu")
+    return list(annonces.values())
+
+
+def details_orpi(client, a):
+    """Chambres, meublé, date de mise en ligne, agence et téléphone, lus sur la fiche Orpi."""
+    r = client.get(a["url"])
+    r.raise_for_status()
+    t = r.text
+    val = lambda nom: (re.search(nom + r':\s*"([^"]*)"', t) or [None, ""])[1]
+    tel = re.search(r'href="tel:([^"]+)"', t)
+    agence = val("agenceNom")
+    d = {
+        "agence": "Orpi " + agence.replace("-", " ").title() if agence else "Orpi",
+        "tel": tel.group(1).strip() if tel else None,
+        "dispo": None,
+        "publie": val("dateCreation") or None,
+    }
+    if val("nbChambres").isdigit():
+        d["chambres"] = int(val("nbChambres"))
+    if val("meuble") in ("0", "1"):
+        d["meuble"] = val("meuble") == "1"
+    return d
+
+
 # PAP (derrière Cloudflare) refuse les programmes depuis novembre 2026 : en pause.
 # On ne contourne pas ce blocage ; remettre "pap": source_pap s'il se lève.
-SOURCES = {"bienici": source_bienici}
-DETAILS = {"bienici": details_bienici}
-CHAMPS_DETAILS = ("agence", "tel", "dispo")
+SOURCES = {"bienici": source_bienici, "orpi": source_orpi}
+DETAILS = {"bienici": details_bienici, "orpi": details_orpi}
+CHAMPS_DETAILS = ("agence", "tel", "dispo")  # champs repris des fiches déjà lues (+ ceux listés dans a["details"])
 DETAILS_PAR_PASSAGE = 25  # fiches détaillées demandées au plus par vérification (politesse)
 
 
@@ -204,6 +280,13 @@ def correspond(a, crit):
     if crit.get("exclure_saisonnier") and a.get("saisonnier"):
         return False
     return True
+
+
+def meme_bien(a, b):
+    """Même commune, loyer à 5 € près, surface à 1,5 m² près : sans doute le même bien publié deux fois."""
+    return (a["source"] != b["source"] and cle(a.get("ville")) == cle(b.get("ville"))
+            and a.get("loyer") and b.get("loyer") and abs(a["loyer"] - b["loyer"]) <= 5
+            and a.get("surface") and b.get("surface") and abs(a["surface"] - b["surface"]) <= 1.5)
 
 
 def fmt(v, suffixe=""):
@@ -275,6 +358,7 @@ def main():
 
     alertes, baisses, nouvelles = [], [], {}
     budget_details = DETAILS_PAR_PASSAGE
+    deja_vues = [a for a in anciennes.values() if a.get("actif")]
     with httpx.Client(headers={"User-Agent": UA, "Accept-Language": "fr-FR,fr;q=0.9"}, timeout=40) as client:
         for nom, fonction in SOURCES.items():
             etat = etat_sources.setdefault(nom, {"echecs": 0})
@@ -301,20 +385,26 @@ def main():
                     a["ancien_loyer"] = vieille["loyer"]
                 elif vieille and vieille.get("ancien_loyer"):
                     a["ancien_loyer"] = vieille["ancien_loyer"]
-                # Fiche détaillée (agence, téléphone) : demandée une seule fois par annonce.
+                # Fiche détaillée (agence, téléphone…) : demandée une seule fois par annonce.
                 if vieille and "agence" in vieille:
-                    a.update({k: vieille.get(k) for k in CHAMPS_DETAILS})
+                    cles = vieille.get("details") or CHAMPS_DETAILS
+                    a.update({k: vieille.get(k) for k in cles}, details=list(cles))
                 elif nom in DETAILS and budget_details > 0:
                     budget_details -= 1
                     try:
-                        a.update(DETAILS[nom](client, a))
+                        fiche = DETAILS[nom](client, a)
+                        a.update(fiche, details=sorted(fiche))
                     except Exception as e:  # sans fiche, l'alerte part quand même
                         print(f"[{nom}] fiche {a['id']} indisponible : {e}", file=sys.stderr)
                 nouvelles[a["id"]] = a
                 if not vieille and not premiere_fois and correspond(a, criteres):
-                    alertes.append(a)
+                    if any(meme_bien(a, b) for b in deja_vues):
+                        print(f"[{nom}] doublon ignoré : {a['id']}")
+                    else:
+                        alertes.append(a)
                 elif baisse and correspond(a, criteres):
                     baisses.append(a)
+                deja_vues.append(a)
 
     # Annonces disparues : gardées « retirées » quelque temps, sauf si leur source a échoué.
     sources_ok = {n for n, e in etat_sources.items() if e.get("ok_le") == t}
