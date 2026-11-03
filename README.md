@@ -8,7 +8,7 @@ une alerte Telegram pour chaque nouveauté qui colle aux critères.
   loyer, pièces, chambres, surface, meublé ; repère les locations « de septembre à juin ».
 - **Critères des alertes** : `docs/criteres.json` (bouton « Modifier les critères d'alerte »
   dans l'interface).
-- **Sources** : Bien'ici (la plupart des agences) + Orpi (absent de Bien'ici). PAP est en pause (il bloque
+- **Sources** : Bien'ici (la plupart des agences) + Orpi (absent de Bien'ici) + ParuVendu (dont des particuliers). PAP est en pause (il bloque
   les programmes) ; Leboncoin et SeLoger aussi : utiliser leurs propres alertes.
 
 ## Mise en route des alertes

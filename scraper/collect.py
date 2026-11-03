@@ -1,6 +1,6 @@
 """Veille des locations à l'année (côte sud des Landes).
 
-Récupère les annonces Bien'ici + PAP, met à jour docs/data/annonces.json
+Récupère les annonces Bien'ici + Orpi + ParuVendu, met à jour docs/data/annonces.json
 et envoie une alerte Telegram pour chaque nouvelle annonce qui colle aux
 critères de docs/criteres.json.
 
@@ -254,10 +254,87 @@ def details_orpi(client, a):
     return d
 
 
+# ParuVendu publie des annonces de particuliers absentes des autres sources. Toute la location
+# des Landes tient en 3-4 pages de 30 : on les lit et on garde nos communes.
+PARUVENDU = "https://www.paruvendu.fr/immobilier/recherche/location/landes-40/"
+PARUVENDU_PAGES_MAX = 6
+
+
+def source_paruvendu(client):
+    annonces = {}
+    for p in range(1, PARUVENDU_PAGES_MAX + 1):
+        r = client.get(PARUVENDU + (f"?p={p}" if p > 1 else ""), follow_redirects=True)
+        r.raise_for_status()
+        cartes = re.split(r'class="blocAnnonce\b', r.text)[1:]
+        for carte in cartes:
+            num = re.search(r'data-id="(\d+)"', carte)
+            lien = re.search(r'href="(/immobilier/location/(maison|appartement)/\d+[A-Z0-9]*)"', carte)
+            titre = re.search(r"<h3.*?</h3>", carte, re.S)
+            if not (num and lien and titre):
+                continue
+            commune = re.search(r"</sup>\s*([^<(]+?)\s*\(\d+\)", titre.group())
+            ville = NOM_PAR_CLE.get(cle(commune.group(1))) if commune else None
+            prix = re.search(r"<!-- Prix -->\s*<div>\s*([\d\s]+)&euro;", carte)
+            if not ville or not prix:
+                continue
+            surface = re.search(r"([\d,]+)\s*m<sup>2", titre.group())
+            pieces = re.search(r"(\d+)\s*pi[eè]ces?", carte)
+            chambres = re.search(r"(\d+)\s*chambres?", carte)
+            photo = re.search(r'<img\s+src="(https://img\.paruvendu\.fr/[^"]+)"', carte)
+            maj = re.search(r"mise à jour\"[^>]*>\s*(\d{2})/(\d{2})/(\d{4})", carte)
+            desc = re.search(r'<p class="text-sm text-justify[^"]*">(.*?)</p>', carte, re.S)
+            description = texte(desc.group(1)) if desc else ""
+            genre = lien.group(2)
+            pieces = int(pieces.group(1)) if pieces else None
+            chambres = int(chambres.group(1)) if chambres else None
+            if chambres is not None and pieces and chambres > pieces:  # saisie fantaisiste (vu : « 1112 chambres » pour un studio)
+                chambres = 0 if pieces == 1 else None
+            annonces[num.group(1)] = {
+                "id": "paruvendu:" + num.group(1),
+                "source": "ParuVendu",
+                "url": "https://www.paruvendu.fr" + lien.group(1),
+                "titre": f"{genre.capitalize()} {pieces} pièces" if pieces else genre.capitalize(),
+                "ville": ville,
+                "cp": None,
+                "type": genre,
+                "loyer": int(re.sub(r"\D", "", prix.group(1))),
+                "pieces": pieces,
+                "chambres": chambres,
+                "surface": float(surface.group(1).replace(",", ".")) if surface else None,
+                "meuble": None,
+                "photo": photo.group(1) if photo else None,
+                "publie": f"{maj.group(3)}-{maj.group(2)}-{maj.group(1)}" if maj else None,  # dernière mise à jour
+                "saisonnier": est_saisonnier(description),
+                "extrait": description[:220],
+            }
+        if f"?p={p + 1}" not in r.text:  # dernière page
+            break
+    return list(annonces.values())
+
+
+def details_paruvendu(client, a):
+    """Particulier ou agence, meublé et disponibilité, lus sur la fiche ParuVendu (pas de téléphone affiché)."""
+    r = client.get(a["url"], follow_redirects=True)
+    r.raise_for_status()
+    titre = (re.search(r"<title>(.*?)</title>", r.text, re.S) or [None, ""])[1]
+    corps = texte(re.sub(r"<script.*?</script>|<style.*?</style>", " ", r.text, flags=re.S))
+    dispo = re.search(r"Disponible (?:le |à partir du )?(\d{2})/(\d{2})/(\d{4})", corps)
+    d = {
+        "agence": "Particulier" if "de particulier" in titre else None,
+        "tel": None,
+        "dispo": f"{dispo.group(3)}-{dispo.group(2)}-{dispo.group(1)}" if dispo else None,
+    }
+    if re.search(r"\bnon[ -]meubl", corps, re.I):
+        d["meuble"] = False
+    elif re.search(r"\bmeublée?s?\b", corps, re.I):
+        d["meuble"] = True
+    return d
+
+
 # PAP (derrière Cloudflare) refuse les programmes depuis novembre 2026 : en pause.
 # On ne contourne pas ce blocage ; remettre "pap": source_pap s'il se lève.
-SOURCES = {"bienici": source_bienici, "orpi": source_orpi}
-DETAILS = {"bienici": details_bienici, "orpi": details_orpi}
+SOURCES = {"bienici": source_bienici, "orpi": source_orpi, "paruvendu": source_paruvendu}
+DETAILS = {"bienici": details_bienici, "orpi": details_orpi, "paruvendu": details_paruvendu}
 CHAMPS_DETAILS = ("agence", "tel", "dispo")  # champs repris des fiches déjà lues (+ ceux listés dans a["details"])
 DETAILS_PAR_PASSAGE = 25  # fiches détaillées demandées au plus par vérification (politesse)
 
@@ -309,9 +386,11 @@ def message(a):
         lignes.append("Disponible tout de suite" if jour <= datetime.now(PARIS).date() else "Disponible le " + jour.strftime("%d/%m/%Y"))
     if a.get("saisonnier"):
         lignes.append("⚠️ Peut-être saisonnière (à vérifier)")
-    if a.get("tel") or a.get("agence"):
+    if a.get("tel"):
         # Telegram rend le numéro cliquable : on appelle directement depuis la notification.
         lignes.append("📞 " + " — ".join(html.escape(x, quote=False) for x in (a.get("tel"), a.get("agence")) if x))
+    elif a.get("agence"):  # pas de numéro affiché (ParuVendu) : contact par le site
+        lignes.append("👤 " + html.escape(a["agence"], quote=False) + " — contact via l'annonce")
     lignes.append(f'<a href="{a["url"]}">Voir l\'annonce sur {a["source"]}</a>')
     return "\n".join(lignes)
 
