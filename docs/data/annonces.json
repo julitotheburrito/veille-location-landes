@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-03T14:51:39+00:00",
+ "maj": "2026-11-03T15:19:51+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,14 +17,14 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-03T14:51:39+00:00",
+   "ok_le": "2026-11-03T15:19:51+00:00",
    "nb": 18
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-03T14:51:39+00:00",
-   "nb": 13
+   "ok_le": "2026-11-03T15:19:51+00:00",
+   "nb": 14
   }
  },
  "annonces": [
@@ -107,8 +107,8 @@
    "vu_le": "2026-11-03T14:51:39+00:00",
    "actif": true,
    "agence": "Orpi Mone Martinaud Gestion Soustons",
-   "tel": "05 58 41 12 90",
    "dispo": null,
+   "tel": "05 58 41 12 90",
    "details": [
     "agence",
     "chambres",
@@ -140,6 +140,37 @@
    "agence": "Orpi Adour Ocean",
    "dispo": null,
    "tel": "05 59 52 95 90",
+   "details": [
+    "agence",
+    "chambres",
+    "dispo",
+    "meuble",
+    "publie",
+    "tel"
+   ]
+  },
+  {
+   "id": "orpi:800fe535-33ce-407f-95b9-8faf46020f30",
+   "source": "Orpi",
+   "url": "https://www.orpi.com/annonce-location-appartement-t2-seignosse-40510-800fe535-33ce-407f-95b9-8faf46020f30/",
+   "titre": "Appartement 2 pièces",
+   "ville": "Seignosse",
+   "cp": null,
+   "type": "appartement",
+   "loyer": 720,
+   "pieces": 2,
+   "chambres": 1,
+   "surface": 51.0,
+   "meuble": true,
+   "photo": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/800fe535-33ce-407f-95b9-8faf46020f30--55452da4-aa0a-4ab9-99fe-9ac047afa01d.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ef05d6948b3d873eb5ddff14b41c818fd6a816ea",
+   "publie": "2026-11-03",
+   "saisonnier": false,
+   "extrait": "Ce bien immobilier dispose d'une salle à manger avec un bar, une table et des chaises. Une étagère murale offre un espace de rangement supplémentaire. La pièce est lumineuse et moderne.\nAgence Dufau - Seignosse",
+   "vu_le": "2026-11-03T15:19:51+00:00",
+   "actif": true,
+   "agence": "Orpi Agence Dufau",
+   "tel": "05 58 43 37 44",
+   "dispo": null,
    "details": [
     "agence",
     "chambres",
