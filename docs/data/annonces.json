@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-04T08:59:49+00:00",
+ "maj": "2026-11-04T09:49:49+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,23 +17,80 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-04T08:59:49+00:00",
-   "nb": 18
+   "ok_le": "2026-11-04T09:49:49+00:00",
+   "nb": 19
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-04T08:59:49+00:00",
+   "ok_le": "2026-11-04T09:49:49+00:00",
    "nb": 15
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-04T08:59:49+00:00",
+   "ok_le": "2026-11-04T09:49:49+00:00",
    "nb": 2
   }
  },
  "annonces": [
+  {
+   "id": "bienici:hektor-IMMOASSOCIESGESTION-806",
+   "source": "Bien'ici",
+   "url": "https://www.bienici.com/annonce/hektor-IMMOASSOCIESGESTION-806",
+   "titre": "MAISON T4 DE 94M2 - VEILLE SAINT GIRONS",
+   "ville": "Vielle-Saint-Girons",
+   "cp": "40560",
+   "type": "maison",
+   "loyer": 950,
+   "pieces": 4,
+   "chambres": 3,
+   "surface": 94,
+   "meuble": false,
+   "photo": "https://file.bienici.com/photo/hektor-IMMOASSOCIESGESTION-806_immoassocies.staticlbi.com_original_images_biens_1_402f8d1a85fc5739c0a4fb5474a593b9_photo_528187f1c743e5e4169918673ead780e.jpg",
+   "publie": "2026-11-04T09:34:57.663Z",
+   "saisonnier": false,
+   "extrait": "MAISON RECENTE DUPLEX DE TYPE 4 DE 94.36 M2 COMPOSE D'UNE ENTREE, UN SALON / SEJOUR AVEC CUISINE US MEUBLEE ET EQUIPEE, UN CELLIER, UNE SUITE PARENTALE CHAMBRE AVEC PLACARD ET SALLE D'EAU , UN WC A L'ETAGE DEUX CHAMBRES ",
+   "vu_le": "2026-11-03T10:19:24+00:00",
+   "actif": true,
+   "ancien_loyer": 1015,
+   "agence": "IMMOASSOCIES GESTION",
+   "tel": "0556984545",
+   "dispo": "2026-07-22",
+   "details": [
+    "agence",
+    "tel",
+    "dispo"
+   ]
+  },
+  {
+   "id": "bienici:guy-hoquet-immo-facile-6844211",
+   "source": "Bien'ici",
+   "url": "https://www.bienici.com/annonce/guy-hoquet-immo-facile-6844211",
+   "titre": "Maison meublée 3 chambres à louer à LINXE (40260)",
+   "ville": "Linxe",
+   "cp": "40260",
+   "type": "maison",
+   "loyer": 982,
+   "pieces": 4,
+   "chambres": 3,
+   "surface": 85.05,
+   "meuble": true,
+   "photo": "https://file.bienici.com/photo/guy-hoquet-immo-facile-6844211_media.immo-facile.com_office19_guy_hoquet_castets_catalog_images_pr_web_6_8_4_4_2_1_1_6844211a.jpg_DATEMAJ_25_04_2025-09_29_02",
+   "publie": "2026-11-04T08:49:06.250Z",
+   "saisonnier": false,
+   "extrait": "Disponible pour la location annuelle et située à 10 minutes des plages et dans un lotissement calme, venez découvrir cette jolie maison individuelle meublée d'environ 85 m² avec un jardin clos de 490 m². Elle est organis",
+   "vu_le": "2026-11-04T09:49:49+00:00",
+   "actif": true,
+   "agence": "Guy Hoquet CASTETS",
+   "tel": "0558721000",
+   "dispo": null,
+   "details": [
+    "agence",
+    "dispo",
+    "tel"
+   ]
+  },
   {
    "id": "orpi:0b560e0e-3d14-4943-9799-4f26235ca076",
    "source": "Orpi",
@@ -438,34 +495,6 @@
    "agence": "LOGEMOIS",
    "tel": "0479757539",
    "dispo": null,
-   "details": [
-    "agence",
-    "tel",
-    "dispo"
-   ]
-  },
-  {
-   "id": "bienici:hektor-IMMOASSOCIESGESTION-806",
-   "source": "Bien'ici",
-   "url": "https://www.bienici.com/annonce/hektor-IMMOASSOCIESGESTION-806",
-   "titre": "MAISON T4 DE 94M2 - VEILLE SAINT GIRONS",
-   "ville": "Vielle-Saint-Girons",
-   "cp": "40560",
-   "type": "maison",
-   "loyer": 1015,
-   "pieces": 4,
-   "chambres": 3,
-   "surface": 94,
-   "meuble": false,
-   "photo": "https://file.bienici.com/photo/hektor-IMMOASSOCIESGESTION-806_immoassocies.staticlbi.com_original_images_biens_1_402f8d1a85fc5739c0a4fb5474a593b9_photo_528187f1c743e5e4169918673ead780e.jpg",
-   "publie": "2026-10-23T19:13:50.684Z",
-   "saisonnier": false,
-   "extrait": "MAISON RECENTE DUPLEX DE TYPE 4 DE 94.36 M2 COMPOSE D'UNE ENTREE, UN SALON / SEJOUR AVEC CUISINE US MEUBLEE ET EQUIPEE, UN CELLIER, UNE SUITE PARENTALE CHAMBRE AVEC PLACARD ET SALLE D'EAU , UN WC A L'ETAGE DEUX CHAMBRES ",
-   "vu_le": "2026-11-03T10:19:24+00:00",
-   "actif": true,
-   "agence": "IMMOASSOCIES GESTION",
-   "tel": "0556984545",
-   "dispo": "2026-07-22",
    "details": [
     "agence",
     "tel",
