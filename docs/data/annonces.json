@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-06T16:09:49+00:00",
+ "maj": "2026-11-06T16:30:21+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,19 +17,19 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-06T16:09:49+00:00",
+   "ok_le": "2026-11-06T16:30:21+00:00",
    "nb": 19
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-06T16:09:49+00:00",
+   "ok_le": "2026-11-06T16:30:21+00:00",
    "nb": 15
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-06T16:09:49+00:00",
+   "ok_le": "2026-11-06T16:30:21+00:00",
    "nb": 2
   }
  },
@@ -773,7 +773,7 @@
    "photo": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/29f3a485-3d39-470d-8551-aec7f7030edd--2b1569db-3a54-4702-9654-a1730d9898f1.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=3a3056a3d8c45148e2a70e2ed66cdd88f5c35bba",
    "publie": "2026-10-16",
    "saisonnier": false,
-   "extrait": "Appartement à louer à Soustons vignette-4",
+   "extrait": "Appartement à louer à Soustons vignette-5",
    "vu_le": "2026-11-03T12:13:42+00:00",
    "actif": true,
    "ancien_loyer": 1100,
@@ -1014,7 +1014,7 @@
    "photo": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4f71cfa8-18ee-4cf0-8737-4b93f22041d3--d7ca27a6-49fe-4770-ac8c-3ff135bf2b37.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ad6727b681a5d992ac82617026a019feee53940d",
    "publie": "2025-11-20",
    "saisonnier": false,
-   "extrait": "Appartement à louer à Soustons vignette-2",
+   "extrait": "Appartement à louer à Soustons vignette-3",
    "vu_le": "2026-11-03T12:13:42+00:00",
    "actif": true,
    "agence": "Orpi Mone Martinaud Gestion Soustons",
@@ -1045,7 +1045,7 @@
    "photo": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/c5cc6e7a-60be-4fc3-aef8-21c28c011479--71cba5d0-1362-4035-ac83-d75fe004f005.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dc3b6bb308b2e7b7a66bb1e6a1028e79db81cf45",
    "publie": "2025-11-19",
    "saisonnier": false,
-   "extrait": "Appartement à louer à Soustons vignette-1",
+   "extrait": "Appartement à louer à Soustons vignette-2",
    "vu_le": "2026-11-03T12:13:42+00:00",
    "actif": true,
    "agence": "Orpi Mone Martinaud Gestion Soustons",
