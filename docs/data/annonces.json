@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-05T18:39:48+00:00",
+ "maj": "2026-11-06T09:49:50+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,19 +17,19 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-05T18:39:48+00:00",
+   "ok_le": "2026-11-06T09:49:50+00:00",
    "nb": 19
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-05T18:39:48+00:00",
-   "nb": 14
+   "ok_le": "2026-11-06T09:49:50+00:00",
+   "nb": 15
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-05T18:39:48+00:00",
+   "ok_le": "2026-11-06T09:49:50+00:00",
    "nb": 2
   }
  },
@@ -949,12 +949,12 @@
    "chambres": 3,
    "surface": 96.62,
    "meuble": false,
-   "photo": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/1532a52d-a2a0-4235-9124-a4a279437d51--79e1535e-7b4b-49e2-b3ff-594777cd29ea.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ef9c37c51b4196b02e6b6d331b0b76a8487265fc",
+   "photo": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/1532a52d-a2a0-4235-9124-a4a279437d51--ec2f2bcf-1b71-4ad6-bfa7-950fc88221d1.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=2623e9d8f138722c7f03171d71d182ee15b3c181",
    "publie": "2026-09-17",
    "saisonnier": false,
-   "extrait": "Cette photo présente un salon spacieux avec une cheminée en pierre, un plancher en bois et une mezzanine. De grandes baies vitrées donnent sur un espace extérieur, offrant une belle luminosité. Le style est rustique et c",
+   "extrait": "Cette propriété offre un cadre de vie exceptionnel avec un jardin luxuriant et une terrasse spacieuse, idéale pour profiter des beaux jours. La maison, de style traditionnel, s\\'intègre parfaitement à son environnement v",
    "vu_le": "2026-11-03T12:13:42+00:00",
-   "actif": false,
+   "actif": true,
    "agence": "Orpi Adour Ocean",
    "dispo": null,
    "tel": "05 59 52 95 90",
@@ -965,8 +965,7 @@
     "meuble",
     "publie",
     "tel"
-   ],
-   "retire_le": "2026-11-04T08:59:49+00:00"
+   ]
   },
   {
    "id": "orpi:b203f159-dfa8-4ae2-9d48-15e83be6ce05",
