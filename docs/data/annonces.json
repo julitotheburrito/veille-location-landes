@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-09T11:49:47+00:00",
+ "maj": "2026-11-09T12:50:06+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,19 +17,19 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-09T11:49:47+00:00",
-   "nb": 20
+   "ok_le": "2026-11-09T12:50:06+00:00",
+   "nb": 19
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-09T11:49:47+00:00",
+   "ok_le": "2026-11-09T12:50:06+00:00",
    "nb": 15
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-09T11:49:47+00:00",
+   "ok_le": "2026-11-09T12:50:06+00:00",
    "nb": 3
   }
  },
@@ -54,8 +54,8 @@
    "vu_le": "2026-11-09T11:49:47+00:00",
    "actif": true,
    "agence": "Guy Hoquet L'Immobilier SOUSTONS",
-   "tel": "05 58 41 03 33",
    "dispo": null,
+   "tel": "05 58 41 03 33",
    "details": [
     "agence",
     "dispo",
@@ -747,7 +747,7 @@
    "saisonnier": false,
    "extrait": "Située à l'écart du bourg, dans un environnement calme et proche de la nature, cette maison offre 2 chambres ainsi qu'un studio indépendant, idéal pour recevoir ou télétravailler. Vous profiterez également d'un extérieur",
    "vu_le": "2026-11-03T10:19:24+00:00",
-   "actif": true,
+   "actif": false,
    "agence": "Guy Hoquet L'Immobilier SOUSTONS",
    "tel": "05 58 41 03 33",
    "dispo": null,
@@ -755,7 +755,8 @@
     "agence",
     "tel",
     "dispo"
-   ]
+   ],
+   "retire_le": "2026-11-09T12:50:06+00:00"
   },
   {
    "id": "paruvendu:1296422802",
