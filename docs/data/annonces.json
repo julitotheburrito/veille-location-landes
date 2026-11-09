@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-09T23:09:50+00:00",
+ "maj": "2026-11-09T23:49:49+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,19 +17,19 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-09T23:09:50+00:00",
-   "nb": 17
+   "ok_le": "2026-11-09T23:49:49+00:00",
+   "nb": 16
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-09T23:09:50+00:00",
+   "ok_le": "2026-11-09T23:49:49+00:00",
    "nb": 15
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-09T23:09:50+00:00",
+   "ok_le": "2026-11-09T23:49:49+00:00",
    "nb": 2
   }
  },
@@ -895,7 +895,7 @@
    "saisonnier": false,
    "extrait": "Pour toute demande concernant ce logement, nous vous invitons à déposer votre dossier de candidature en ligne en suivant le mode opératoire disponible sur la 2ème photo de l¿annonce. Dès que votre dossier est complet, no",
    "vu_le": "2026-11-03T10:19:24+00:00",
-   "actif": true,
+   "actif": false,
    "agence": "Square Habitat Soustons",
    "tel": "05 33 89 12 36",
    "dispo": "2026-10-21",
@@ -903,7 +903,8 @@
     "agence",
     "tel",
     "dispo"
-   ]
+   ],
+   "retire_le": "2026-11-09T23:49:49+00:00"
   },
   {
    "id": "orpi:cc28a4c5-f5ca-4318-b362-503aa075c695",
