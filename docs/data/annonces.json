@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-09T12:50:06+00:00",
+ "maj": "2026-11-09T14:10:07+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,20 +17,20 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-09T12:50:06+00:00",
+   "ok_le": "2026-11-09T14:10:07+00:00",
    "nb": 19
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-09T12:50:06+00:00",
+   "ok_le": "2026-11-09T14:10:07+00:00",
    "nb": 15
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-09T12:50:06+00:00",
-   "nb": 3
+   "ok_le": "2026-11-09T14:10:07+00:00",
+   "nb": 2
   }
  },
  "annonces": [
@@ -108,7 +108,7 @@
    "saisonnier": false,
    "extrait": "Maison neuve de 90 m2 à louer dans la commune de Messanges. Comprend 3 chambres, cuisine ouverte, et 2 places de parking. À proximité des écoles et commerces, avec terrasse et jardin de 150 m2. Livraison prévue en septem",
    "vu_le": "2026-11-08T14:59:48+00:00",
-   "actif": true,
+   "actif": false,
    "agence": null,
    "dispo": null,
    "tel": null,
@@ -116,7 +116,8 @@
     "agence",
     "dispo",
     "tel"
-   ]
+   ],
+   "retire_le": "2026-11-09T14:10:07+00:00"
   },
   {
    "id": "bienici:laforet-immo-facile-19235590",
