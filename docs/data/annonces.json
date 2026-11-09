@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-09T14:10:07+00:00",
+ "maj": "2026-11-09T17:19:47+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,19 +17,19 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-09T14:10:07+00:00",
-   "nb": 19
+   "ok_le": "2026-11-09T17:19:47+00:00",
+   "nb": 18
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-09T14:10:07+00:00",
+   "ok_le": "2026-11-09T17:19:47+00:00",
    "nb": 15
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-09T14:10:07+00:00",
+   "ok_le": "2026-11-09T17:19:47+00:00",
    "nb": 2
   }
  },
@@ -137,7 +137,7 @@
    "saisonnier": false,
    "extrait": "Découvrez cet agréable appartement meublé d'environ 80 m², offrant une belle vue sur le lac de Soustons. Il se compose d'une entrée, d'un salon-séjour, d'une cuisine indépendante aménagée et équipée, de trois chambres do",
    "vu_le": "2026-11-03T10:19:24+00:00",
-   "actif": true,
+   "actif": false,
    "agence": "Laforêt ST GEOURS DE MAREMME",
    "tel": "0558565385",
    "dispo": null,
@@ -145,7 +145,8 @@
     "agence",
     "tel",
     "dispo"
-   ]
+   ],
+   "retire_le": "2026-11-09T17:19:47+00:00"
   },
   {
    "id": "bienici:guy-hoquet-immo-facile-7153829",
