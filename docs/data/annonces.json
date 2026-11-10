@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-10T11:19:49+00:00",
+ "maj": "2026-11-10T11:29:47+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,19 +17,19 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-10T11:19:49+00:00",
+   "ok_le": "2026-11-10T11:29:47+00:00",
    "nb": 16
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-10T11:19:49+00:00",
+   "ok_le": "2026-11-10T11:29:47+00:00",
    "nb": 15
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-10T11:19:49+00:00",
+   "ok_le": "2026-11-10T11:29:47+00:00",
    "nb": 2
   }
  },
@@ -1075,7 +1075,7 @@
    "photo": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4f71cfa8-18ee-4cf0-8737-4b93f22041d3--08cd2857-03de-4187-9473-cbed75155eb5.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=072bb6f754174b8748f78a82fabc9013fe6170eb",
    "publie": "2025-11-20",
    "saisonnier": false,
-   "extrait": "Appartement à louer à Soustons vignette-5",
+   "extrait": "Appartement à louer à Soustons vignette-6",
    "vu_le": "2026-11-03T12:13:42+00:00",
    "actif": true,
    "agence": "Orpi Mone Martinaud Gestion Soustons",
