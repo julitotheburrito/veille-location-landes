@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-12T17:29:47+00:00",
+ "maj": "2026-11-12T17:39:48+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,19 +17,19 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-12T17:29:47+00:00",
+   "ok_le": "2026-11-12T17:39:48+00:00",
    "nb": 15
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-12T17:29:47+00:00",
+   "ok_le": "2026-11-12T17:39:48+00:00",
    "nb": 14
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-12T17:29:47+00:00",
+   "ok_le": "2026-11-12T17:39:48+00:00",
    "nb": 2
   }
  },
@@ -1171,7 +1171,7 @@
    "photo": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/746beb2f-19ad-4802-aae6-0b8cfbce2d68--6fe20205-40aa-40fe-8891-2dc73b8ebf3c.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=e58d9ad77b0708d61af676e1172c27cd211f3dfe",
    "publie": "2024-10-29",
    "saisonnier": false,
-   "extrait": "Maison à louer à Seignosse vignette-1",
+   "extrait": "Maison à louer à Seignosse vignette-2",
    "vu_le": "2026-11-03T12:13:42+00:00",
    "actif": true,
    "agence": "Orpi Agence Durand",
