@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-13T17:49:48+00:00",
+ "maj": "2026-11-13T18:09:48+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,19 +17,19 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-13T17:49:48+00:00",
+   "ok_le": "2026-11-13T18:09:48+00:00",
    "nb": 16
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-13T17:49:48+00:00",
+   "ok_le": "2026-11-13T18:09:48+00:00",
    "nb": 14
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-13T17:49:48+00:00",
+   "ok_le": "2026-11-13T18:09:48+00:00",
    "nb": 2
   }
  },
@@ -384,37 +384,6 @@
    ]
   },
   {
-   "id": "orpi:22346ace-6f9c-4ebb-b006-0b4c0df3c9cd",
-   "source": "Orpi",
-   "url": "https://www.orpi.com/annonce-location-appartement-t1-vieux-boucau-les-bains-40480-22346ace-6f9c-4ebb-b006-0b4c0df3c9cd/",
-   "titre": "Appartement 1 pièces",
-   "ville": "Vieux-Boucau-les-Bains",
-   "cp": null,
-   "type": "appartement",
-   "loyer": 700,
-   "pieces": 1,
-   "chambres": 0,
-   "surface": 40.38,
-   "meuble": false,
-   "photo": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/22346ace-6f9c-4ebb-b006-0b4c0df3c9cd--5e02b2dc-c240-4d03-9185-b22055c0f097.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=2737d1791d6cb80e573472231e7cf50c2114afd5",
-   "publie": "2026-11-03",
-   "saisonnier": false,
-   "extrait": "Cette photo présente une cuisine fonctionnelle et lumineuse, équipée d'un réfrigérateur, d'un four, de plaques de cuisson et de rangements. Les fenêtres offrent une belle luminosité.\nAdour Océan - Vieux-Boucau-les-Bains",
-   "vu_le": "2026-11-03T12:13:42+00:00",
-   "actif": true,
-   "agence": "Orpi Adour Ocean",
-   "dispo": null,
-   "tel": "05 59 52 95 90",
-   "details": [
-    "agence",
-    "chambres",
-    "dispo",
-    "meuble",
-    "publie",
-    "tel"
-   ]
-  },
-  {
    "id": "orpi:800fe535-33ce-407f-95b9-8faf46020f30",
    "source": "Orpi",
    "url": "https://www.orpi.com/annonce-location-appartement-t2-seignosse-40510-800fe535-33ce-407f-95b9-8faf46020f30/",
@@ -436,6 +405,37 @@
    "agence": "Orpi Agence Dufau",
    "dispo": null,
    "tel": "05 58 43 37 44",
+   "details": [
+    "agence",
+    "chambres",
+    "dispo",
+    "meuble",
+    "publie",
+    "tel"
+   ]
+  },
+  {
+   "id": "orpi:22346ace-6f9c-4ebb-b006-0b4c0df3c9cd",
+   "source": "Orpi",
+   "url": "https://www.orpi.com/annonce-location-appartement-t1-vieux-boucau-les-bains-40480-22346ace-6f9c-4ebb-b006-0b4c0df3c9cd/",
+   "titre": "Appartement 1 pièces",
+   "ville": "Vieux-Boucau-les-Bains",
+   "cp": null,
+   "type": "appartement",
+   "loyer": 700,
+   "pieces": 1,
+   "chambres": 0,
+   "surface": 40.38,
+   "meuble": false,
+   "photo": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/22346ace-6f9c-4ebb-b006-0b4c0df3c9cd--5e02b2dc-c240-4d03-9185-b22055c0f097.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=2737d1791d6cb80e573472231e7cf50c2114afd5",
+   "publie": "2026-11-03",
+   "saisonnier": false,
+   "extrait": "Cette photo présente une cuisine fonctionnelle et lumineuse, équipée d'un réfrigérateur, d'un four, de plaques de cuisson et de rangements. Les fenêtres offrent une belle luminosité.\nAdour Océan - Vieux-Boucau-les-Bains",
+   "vu_le": "2026-11-03T12:13:42+00:00",
+   "actif": true,
+   "agence": "Orpi Adour Ocean",
+   "dispo": null,
+   "tel": "05 59 52 95 90",
    "details": [
     "agence",
     "chambres",
