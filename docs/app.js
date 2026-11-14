@@ -117,6 +117,8 @@ function garde(a, v) {
   const min = (val, seuil) => seuil === "" || val == null || val >= Number(seuil);
   if (v.loyer_max !== "" && a.loyer != null && a.loyer > Number(v.loyer_max)) return false;
   if (!min(a.pieces, v.pieces_min) || !min(a.chambres, v.chambres_min) || !min(a.surface, v.surface_min)) return false;
+  // Chambres inconnues : un N pièces en a au plus N-1 (un studio n'a pas 3 chambres).
+  if (v.chambres_min !== "" && a.chambres == null && a.pieces && a.pieces - 1 < Number(v.chambres_min)) return false;
   if (v.meuble && a.meuble != null && a.meuble !== (v.meuble === "oui")) return false;
   if (v.sans_saison && a.saisonnier) return false;
   return true;

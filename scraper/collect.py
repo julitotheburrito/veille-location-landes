@@ -210,6 +210,7 @@ def source_orpi(client):
             surface = re.search(r"([\d,]+)\s*m", champ("estate-surface"))
             photo = re.search(r'data-src="([^"]+)"', carte)
             alt = html.unescape((re.search(r'alt="([^"]*)"', carte) or [None, ""])[1])
+            alt = re.sub(r"\s*vignette-\d+", "", alt)  # numéro de photo tiré au hasard : changerait à chaque passage
             annonces[ref.group(1)] = {
                 "id": "orpi:" + ref.group(1),
                 "source": "Orpi",
@@ -352,6 +353,9 @@ def correspond(a, crit):
         # Une valeur inconnue ne bloque pas l'alerte : mieux vaut une alerte de trop.
         if limite is not None and valeur is not None and (valeur - limite) * sens < 0:
             return False
+    # Chambres inconnues : un N pièces en a au plus N-1 (un studio n'a pas 3 chambres).
+    if crit.get("chambres_min") and a.get("chambres") is None and a.get("pieces") and a["pieces"] - 1 < crit["chambres_min"]:
+        return False
     if crit.get("meuble") is not None and a.get("meuble") is not None and a["meuble"] != crit["meuble"]:
         return False
     if crit.get("exclure_saisonnier") and a.get("saisonnier"):
@@ -497,7 +501,8 @@ def main():
         if a.get("actif") or a.get("retire_le", t) > limite:
             nouvelles[id_] = a
 
-    annonces = sorted(nouvelles.values(), key=lambda a: (a.get("publie") or a["vu_le"]), reverse=True)
+    # L'id départage les annonces de même date : ordre stable d'un passage à l'autre.
+    annonces = sorted(nouvelles.values(), key=lambda a: (a.get("publie") or a["vu_le"], a["id"]), reverse=True)
     donnees = {"maj": t, "communes": [c[0] for c in COMMUNES], "sources": etat_sources, "annonces": annonces,
                "sante": ancien.get("sante")}
 
