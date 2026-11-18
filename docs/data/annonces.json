@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-17T23:19:48+00:00",
+ "maj": "2026-11-18T08:19:49+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,19 +17,19 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-17T23:19:48+00:00",
+   "ok_le": "2026-11-18T08:19:49+00:00",
    "nb": 16
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-17T23:19:48+00:00",
+   "ok_le": "2026-11-18T08:19:49+00:00",
    "nb": 14
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-17T23:19:48+00:00",
+   "ok_le": "2026-11-18T08:19:49+00:00",
    "nb": 2
   }
  },
@@ -1242,38 +1242,6 @@
     "publie",
     "tel"
    ]
-  },
-  {
-   "id": "orpi:967-044004-780",
-   "source": "Orpi",
-   "url": "https://www.orpi.com/annonce-location-appartement-t3-soustons-40140-967-044004-780/",
-   "titre": "Appartement 3 pièces",
-   "ville": "Soustons",
-   "cp": null,
-   "type": "appartement",
-   "loyer": 650,
-   "pieces": 3,
-   "chambres": 2,
-   "surface": 48.32,
-   "meuble": false,
-   "photo": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/0fcbbdb5-30c3-4611-8a0a-d677d9bf389b--a1ddc7a3-fa7c-4b54-846f-33dba35d78b6.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=849c23f57dbdcc4adee139aac5aecf6e6be8965b",
-   "publie": "2023-12-08",
-   "saisonnier": false,
-   "extrait": "Appartement à louer à Soustons",
-   "vu_le": "2026-11-03T18:40:02+00:00",
-   "actif": false,
-   "agence": "Orpi Agence J P Bouquet",
-   "dispo": null,
-   "tel": "05 58 48 13 50",
-   "details": [
-    "agence",
-    "chambres",
-    "dispo",
-    "meuble",
-    "publie",
-    "tel"
-   ],
-   "retire_le": "2026-11-04T08:19:49+00:00"
   }
  ],
  "sante": "2026-S47"
