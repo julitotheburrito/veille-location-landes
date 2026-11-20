@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-20T12:29:49+00:00",
+ "maj": "2026-11-20T14:49:51+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,19 +17,19 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-20T12:29:49+00:00",
+   "ok_le": "2026-11-20T14:49:51+00:00",
    "nb": 18
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-20T12:29:49+00:00",
-   "nb": 14
+   "ok_le": "2026-11-20T14:49:51+00:00",
+   "nb": 13
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-20T12:29:49+00:00",
+   "ok_le": "2026-11-20T14:49:51+00:00",
    "nb": 3
   }
  },
@@ -453,7 +453,7 @@
    "saisonnier": false,
    "extrait": "Ce balcon en bois offre une vue dégagée sur un quartier résidentiel. La structure rouge distinctive et le plancher en bois créent un espace extérieur attrayant.\nMoné Martinaud Gestion Soustons - Soustons",
    "vu_le": "2026-11-04T08:49:48+00:00",
-   "actif": true,
+   "actif": false,
    "agence": "Orpi Mone Martinaud Gestion Soustons",
    "dispo": null,
    "tel": "05 58 41 12 90",
@@ -464,7 +464,8 @@
     "meuble",
     "publie",
     "tel"
-   ]
+   ],
+   "retire_le": "2026-11-20T14:49:51+00:00"
   },
   {
    "id": "orpi:800fe535-33ce-407f-95b9-8faf46020f30",
