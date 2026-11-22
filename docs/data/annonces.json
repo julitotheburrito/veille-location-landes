@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-21T19:29:49+00:00",
+ "maj": "2026-11-22T01:59:50+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,20 +17,20 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-21T19:29:49+00:00",
+   "ok_le": "2026-11-22T01:59:50+00:00",
    "nb": 18
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-21T19:29:49+00:00",
+   "ok_le": "2026-11-22T01:59:50+00:00",
    "nb": 13
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-21T19:29:49+00:00",
-   "nb": 3
+   "ok_le": "2026-11-22T01:59:50+00:00",
+   "nb": 2
   }
  },
  "annonces": [
@@ -108,7 +108,7 @@
    "saisonnier": false,
    "extrait": "À louer, studio meublé de 26,03 m² avec terrasse, jardin et parking dans une résidence moderne à Léon. Pièce de vie lumineuse, coin cuisine équipé, salle d'eau et rangements. Emplacement privilégié, commerces et lac à pr",
    "vu_le": "2026-11-20T10:49:50+00:00",
-   "actif": true,
+   "actif": false,
    "agence": null,
    "dispo": null,
    "tel": null,
@@ -117,7 +117,8 @@
     "dispo",
     "meuble",
     "tel"
-   ]
+   ],
+   "retire_le": "2026-11-22T01:59:50+00:00"
   },
   {
    "id": "bienici:guy-hoquet-immo-facile-7806751",
