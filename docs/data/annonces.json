@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-23T14:09:50+00:00",
+ "maj": "2026-11-23T14:19:49+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,19 +17,19 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-23T14:09:50+00:00",
+   "ok_le": "2026-11-23T14:19:49+00:00",
    "nb": 20
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-23T14:09:50+00:00",
+   "ok_le": "2026-11-23T14:19:49+00:00",
    "nb": 12
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-23T14:09:50+00:00",
+   "ok_le": "2026-11-23T14:19:49+00:00",
    "nb": 3
   }
  },
@@ -399,35 +399,6 @@
     "tel",
     "dispo"
    ]
-  },
-  {
-   "id": "paruvendu:1297189343",
-   "source": "ParuVendu",
-   "url": "https://www.paruvendu.fr/immobilier/location/maison/1297189343A1KILHMN000",
-   "titre": "Maison 4 pièces",
-   "ville": "Messanges",
-   "cp": null,
-   "type": "maison",
-   "loyer": 1150,
-   "pieces": 4,
-   "chambres": 3,
-   "surface": 90.0,
-   "meuble": null,
-   "photo": "https://img.paruvendu.fr/media_ext/_https_/aycp-image.s3.rbx.io.cloud.ovh.net/61/81/L2MtNmFmMDZiZjQ0MDgxNTkzYWMxMGRkZTE2LWQwMTc3NjY0YzA2MjUxY2ZkYTljYTM5MWRhYmQ1NWYzNmVkZmU5ZGZiZWNhMjQyM2FjZmQ4ZThjMzg4MGNjMDkuanBnPzIwMjYxMTA4MjAxNjIw_rct?func=crop&w=320&gravity=auto",
-   "publie": "2026-11-08",
-   "saisonnier": false,
-   "extrait": "Maison neuve de 90 m2 à louer dans la commune de Messanges. Comprend 3 chambres, cuisine ouverte, et 2 places de parking. À proximité des écoles et commerces, avec terrasse et jardin de 150 m2. Livraison prévue en septem",
-   "vu_le": "2026-11-08T14:59:48+00:00",
-   "actif": false,
-   "agence": null,
-   "dispo": null,
-   "tel": null,
-   "details": [
-    "agence",
-    "dispo",
-    "tel"
-   ],
-   "retire_le": "2026-11-09T14:10:07+00:00"
   },
   {
    "id": "bienici:laforet-immo-facile-19235590",
