@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-23T11:09:50+00:00",
+ "maj": "2026-11-23T11:39:56+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,20 +17,20 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-23T11:09:50+00:00",
+   "ok_le": "2026-11-23T11:39:56+00:00",
    "nb": 20
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-23T11:09:50+00:00",
+   "ok_le": "2026-11-23T11:39:56+00:00",
    "nb": 13
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-23T11:09:50+00:00",
-   "nb": 2
+   "ok_le": "2026-11-23T11:39:56+00:00",
+   "nb": 3
   }
  },
  "annonces": [
@@ -54,8 +54,8 @@
    "vu_le": "2026-11-23T11:09:50+00:00",
    "actif": true,
    "agence": "Guy Hoquet L'Immobilier SOUSTONS",
-   "tel": "05 58 41 03 33",
    "dispo": null,
+   "tel": "05 58 41 03 33",
    "details": [
     "agence",
     "dispo",
@@ -82,8 +82,8 @@
    "vu_le": "2026-11-23T11:09:50+00:00",
    "actif": true,
    "agence": "Guy Hoquet L'Immobilier SOUSTONS",
-   "tel": "05 58 41 03 33",
    "dispo": null,
+   "tel": "05 58 41 03 33",
    "details": [
     "agence",
     "dispo",
@@ -110,8 +110,8 @@
    "vu_le": "2026-11-23T11:09:50+00:00",
    "actif": true,
    "agence": "Guy Hoquet L'Immobilier SOUSTONS",
-   "tel": "05 58 41 03 33",
    "dispo": null,
+   "tel": "05 58 41 03 33",
    "details": [
     "agence",
     "dispo",
@@ -192,7 +192,7 @@
    "saisonnier": false,
    "extrait": "À louer, studio meublé de 26,03 m² avec terrasse, jardin et parking dans une résidence moderne à Léon. Pièce de vie lumineuse, coin cuisine équipé, salle d'eau et rangements. Emplacement privilégié, commerces et lac à pr",
    "vu_le": "2026-11-20T10:49:50+00:00",
-   "actif": false,
+   "actif": true,
    "agence": null,
    "dispo": null,
    "tel": null,
@@ -201,8 +201,7 @@
     "dispo",
     "meuble",
     "tel"
-   ],
-   "retire_le": "2026-11-23T10:29:57+00:00"
+   ]
   },
   {
    "id": "bienici:guy-hoquet-immo-facile-7806751",
