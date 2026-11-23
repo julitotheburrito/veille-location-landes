@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-23T08:09:50+00:00",
+ "maj": "2026-11-23T08:20:02+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,19 +17,19 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-23T08:09:50+00:00",
+   "ok_le": "2026-11-23T08:20:02+00:00",
    "nb": 17
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-23T08:09:50+00:00",
+   "ok_le": "2026-11-23T08:20:02+00:00",
    "nb": 13
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-23T08:09:50+00:00",
+   "ok_le": "2026-11-23T08:20:02+00:00",
    "nb": 2
   }
  },
@@ -1097,7 +1097,7 @@
    "chambres": 0,
    "surface": 181.0,
    "meuble": true,
-   "photo": "https://img.paruvendu.fr/_static_/2026111908/communfo/img/sitemobile/novisu-320x200.jpg",
+   "photo": "https://img.paruvendu.fr/_static_/2026112309/communfo/img/sitemobile/novisu-320x200.jpg",
    "publie": "2026-09-27",
    "saisonnier": false,
    "extrait": "Beau studio bien équipé à 400 m de la plage, parking. pour plus d'informations, vous pouvez contacter directement l'annonceur. merci.",
