@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-23T10:29:57+00:00",
+ "maj": "2026-11-23T11:09:50+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,23 +17,107 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-23T10:29:57+00:00",
-   "nb": 17
+   "ok_le": "2026-11-23T11:09:50+00:00",
+   "nb": 20
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-23T10:29:57+00:00",
+   "ok_le": "2026-11-23T11:09:50+00:00",
    "nb": 13
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-23T10:29:57+00:00",
+   "ok_le": "2026-11-23T11:09:50+00:00",
    "nb": 2
   }
  },
  "annonces": [
+  {
+   "id": "bienici:guy-hoquet-immo-facile-7437407",
+   "source": "Bien'ici",
+   "url": "https://www.bienici.com/annonce/guy-hoquet-immo-facile-7437407",
+   "titre": "Appartement T2 au bord du lac de Vieux Boucau",
+   "ville": "Vieux-Boucau-les-Bains",
+   "cp": "40480",
+   "type": "appartement",
+   "loyer": 780,
+   "pieces": 2,
+   "chambres": 1,
+   "surface": 47.15,
+   "meuble": false,
+   "photo": "https://file.bienici.com/photo/guy-hoquet-immo-facile-7437407_media.immo-facile.com_office11_guyhoquet_soustons_catalog_images_pr_web_7_4_3_7_4_0_7_7437407a.jpg_DATEMAJ_12_12_2025-16_08_08",
+   "publie": "2026-11-23T10:41:44.694Z",
+   "saisonnier": false,
+   "extrait": "Dans une résidence récente, calme et sécurisée, idéalement située en bordure du lac marin de Vieux-Boucau, découvrez ce charmant T2 bis offrant un cadre de vie exceptionnel. Cet appartement avec jardinet offre différente",
+   "vu_le": "2026-11-23T11:09:50+00:00",
+   "actif": true,
+   "agence": "Guy Hoquet L'Immobilier SOUSTONS",
+   "tel": "05 58 41 03 33",
+   "dispo": null,
+   "details": [
+    "agence",
+    "dispo",
+    "tel"
+   ]
+  },
+  {
+   "id": "bienici:guy-hoquet-immo-facile-2575733",
+   "source": "Bien'ici",
+   "url": "https://www.bienici.com/annonce/guy-hoquet-immo-facile-2575733",
+   "titre": "Appartement centre- ville",
+   "ville": "Soustons",
+   "cp": "40140",
+   "type": "appartement",
+   "loyer": 520,
+   "pieces": 1,
+   "chambres": 1,
+   "surface": 30,
+   "meuble": null,
+   "photo": "https://file.bienici.com/photo/guy-hoquet-immo-facile-2575733_media.immo-facile.com_office11_guyhoquet_soustons_catalog_images_pr_p_2_5_7_5_7_3_3_2575733a.jpg_DATEMAJ_18_03_2025-17_30_01",
+   "publie": "2026-11-23T10:41:44.581Z",
+   "saisonnier": false,
+   "extrait": "Dans une résidence au coeur du village, découvrez cet appartement refait à neuf disposant d'un salon avec cuisine ouverte, une salle d'eau et un coin nuit. Agréable balcon avec vue dégagée. Place de parking. Disponible m",
+   "vu_le": "2026-11-23T11:09:50+00:00",
+   "actif": true,
+   "agence": "Guy Hoquet L'Immobilier SOUSTONS",
+   "tel": "05 58 41 03 33",
+   "dispo": null,
+   "details": [
+    "agence",
+    "dispo",
+    "tel"
+   ]
+  },
+  {
+   "id": "bienici:guy-hoquet-immo-facile-7188502",
+   "source": "Bien'ici",
+   "url": "https://www.bienici.com/annonce/guy-hoquet-immo-facile-7188502",
+   "titre": "Maisonnette T2 bis",
+   "ville": "Soustons",
+   "cp": "40140",
+   "type": "maison",
+   "loyer": 570,
+   "pieces": 2,
+   "chambres": 1,
+   "surface": 47.89,
+   "meuble": false,
+   "photo": "https://file.bienici.com/photo/guy-hoquet-immo-facile-7188502_media.immo-facile.com_office11_guyhoquet_soustons_catalog_images_pr_web_7_1_8_8_5_0_2_7188502a.jpg_DATEMAJ_18_03_2025-19_37_06",
+   "publie": "2026-11-23T10:40:50.424Z",
+   "saisonnier": false,
+   "extrait": "Villa patio composée d'une cuisine ouverte sur le séjour, une buanderie, un WC indépendant, une salle de bain, une chambre, une mezzanine et un jardinet. Les honoraires à la charge du locataire 432€ état des lieux compri",
+   "vu_le": "2026-11-23T11:09:50+00:00",
+   "actif": true,
+   "agence": "Guy Hoquet L'Immobilier SOUSTONS",
+   "tel": "05 58 41 03 33",
+   "dispo": null,
+   "details": [
+    "agence",
+    "dispo",
+    "tel"
+   ]
+  },
   {
    "id": "bienici:hektor-DUOCOM_1-83",
    "source": "Bien'ici",
