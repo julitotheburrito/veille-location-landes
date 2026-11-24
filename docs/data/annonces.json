@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-24T12:39:49+00:00",
+ "maj": "2026-11-24T13:39:59+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,19 +17,19 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-24T12:39:49+00:00",
-   "nb": 21
+   "ok_le": "2026-11-24T13:39:59+00:00",
+   "nb": 20
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-24T12:39:49+00:00",
+   "ok_le": "2026-11-24T13:39:59+00:00",
    "nb": 11
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-24T12:39:49+00:00",
+   "ok_le": "2026-11-24T13:39:59+00:00",
    "nb": 3
   }
  },
@@ -54,8 +54,8 @@
    "vu_le": "2026-11-24T12:39:49+00:00",
    "actif": true,
    "agence": "AGENCE DES PINS",
-   "tel": "05 58 89 79 12",
    "dispo": null,
+   "tel": "05 58 89 79 12",
    "details": [
     "agence",
     "dispo",
@@ -661,7 +661,7 @@
    "saisonnier": false,
    "extrait": "À louer à Vieux-Boucau-les-Bains, découvrez ce charmant appartement T2 meublé de 38 m², situé au premier étage d'une résidence construite en 2003. En bon état, il offre un cadre de vie agréable et fonctionnel, idéal pour",
    "vu_le": "2026-11-03T10:19:24+00:00",
-   "actif": true,
+   "actif": false,
    "agence": "AUPA IMMOBILIER",
    "tel": "0587744033",
    "dispo": null,
@@ -669,7 +669,8 @@
     "agence",
     "tel",
     "dispo"
-   ]
+   ],
+   "retire_le": "2026-11-24T13:39:59+00:00"
   },
   {
    "id": "bienici:immo-facile-61686808",
