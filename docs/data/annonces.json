@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-24T13:39:59+00:00",
+ "maj": "2026-11-24T15:19:53+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,19 +17,19 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-24T13:39:59+00:00",
+   "ok_le": "2026-11-24T15:19:53+00:00",
    "nb": 20
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-24T13:39:59+00:00",
+   "ok_le": "2026-11-24T15:19:53+00:00",
    "nb": 11
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-24T13:39:59+00:00",
+   "ok_le": "2026-11-24T15:19:53+00:00",
    "nb": 3
   }
  },
@@ -868,38 +868,6 @@
     "tel",
     "dispo"
    ]
-  },
-  {
-   "id": "orpi:9bb1c664-4384-44c3-8975-3792bf0f593b",
-   "source": "Orpi",
-   "url": "https://www.orpi.com/annonce-location-appartement-t1-seignosse-40510-9bb1c664-4384-44c3-8975-3792bf0f593b/",
-   "titre": "Appartement 1 pièces",
-   "ville": "Seignosse",
-   "cp": null,
-   "type": "appartement",
-   "loyer": 580,
-   "pieces": 1,
-   "chambres": 0,
-   "surface": 15.76,
-   "meuble": true,
-   "photo": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/9bb1c664-4384-44c3-8975-3792bf0f593b--1ca45532-d877-4301-9ec4-e93fd510ad8f.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=2c940dcb8ae6f4ea6a08362145113c20b8244c94",
-   "publie": "2026-10-20",
-   "saisonnier": false,
-   "extrait": "Ce studio lumineux et moderne offre un espace de vie confortable avec un canapé, une table basse et une télévision. La décoration soignée et la lumière naturelle créent une atmosphère accueillante. Idéal pour un séjour a",
-   "vu_le": "2026-11-03T12:13:42+00:00",
-   "actif": false,
-   "agence": "Orpi Tyrosse Immobilier Orpi",
-   "dispo": null,
-   "tel": "05 58 77 08 00",
-   "details": [
-    "agence",
-    "chambres",
-    "dispo",
-    "meuble",
-    "publie",
-    "tel"
-   ],
-   "retire_le": "2026-11-10T15:19:48+00:00"
   },
   {
    "id": "paruvendu:1296422802",
