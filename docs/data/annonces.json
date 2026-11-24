@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-24T09:19:55+00:00",
+ "maj": "2026-11-24T09:29:48+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,19 +17,19 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-24T09:19:55+00:00",
+   "ok_le": "2026-11-24T09:29:48+00:00",
    "nb": 20
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-24T09:19:55+00:00",
-   "nb": 12
+   "ok_le": "2026-11-24T09:29:48+00:00",
+   "nb": 11
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-24T09:19:55+00:00",
+   "ok_le": "2026-11-24T09:29:48+00:00",
    "nb": 3
   }
  },
@@ -1070,7 +1070,7 @@
    "saisonnier": false,
    "extrait": "Cette propriété offre un cadre de vie exceptionnel avec un jardin luxuriant et une terrasse spacieuse, idéale pour profiter des beaux jours. La maison, de style traditionnel, s\\'intègre parfaitement à son environnement v",
    "vu_le": "2026-11-03T12:13:42+00:00",
-   "actif": true,
+   "actif": false,
    "agence": "Orpi Adour Ocean",
    "dispo": null,
    "tel": "05 59 52 95 90",
@@ -1081,7 +1081,8 @@
     "meuble",
     "publie",
     "tel"
-   ]
+   ],
+   "retire_le": "2026-11-24T09:29:48+00:00"
   },
   {
    "id": "orpi:b203f159-dfa8-4ae2-9d48-15e83be6ce05",
