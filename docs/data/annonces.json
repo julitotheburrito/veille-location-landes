@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-23T23:49:49+00:00",
+ "maj": "2026-11-24T00:29:50+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,19 +17,19 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-23T23:49:49+00:00",
+   "ok_le": "2026-11-24T00:29:50+00:00",
    "nb": 20
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-23T23:49:49+00:00",
+   "ok_le": "2026-11-24T00:29:50+00:00",
    "nb": 13
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-23T23:49:49+00:00",
+   "ok_le": "2026-11-24T00:29:50+00:00",
    "nb": 3
   }
  },
@@ -187,7 +187,7 @@
    "chambres": null,
    "surface": 26.0,
    "meuble": true,
-   "photo": "https://img.paruvendu.fr/_static_/2026112309/communfo/img/sitemobile/transparent_1x1.png",
+   "photo": "https://img.paruvendu.fr/media_ext/box.ics.fr/a5/be/L2NpdF9DSVRZQV9HRVNTSUNfdGljL2xvY2F0aW9uL3Bob3RvL2ZpbGlncmFuZS1JTUFHRV8xLTEzNjE0MzA2NDI2MTE0MDE3NDQuanBnPzIwMjYxMTIwMjAxNTU3_rct?func=crop&w=320&gravity=auto",
    "publie": "2026-11-20",
    "saisonnier": false,
    "extrait": "À louer, studio meublé de 26,03 m² avec terrasse, jardin et parking dans une résidence moderne à Léon. Pièce de vie lumineuse, coin cuisine équipé, salle d'eau et rangements. Emplacement privilégié, commerces et lac à pr",
