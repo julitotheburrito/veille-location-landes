@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-24T15:19:53+00:00",
+ "maj": "2026-11-24T15:59:48+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,19 +17,19 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-24T15:19:53+00:00",
+   "ok_le": "2026-11-24T15:59:48+00:00",
    "nb": 20
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-24T15:19:53+00:00",
+   "ok_le": "2026-11-24T15:59:48+00:00",
    "nb": 11
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-24T15:19:53+00:00",
+   "ok_le": "2026-11-24T15:59:48+00:00",
    "nb": 3
   }
  },
@@ -1151,17 +1151,18 @@
    "ville": "Soustons",
    "cp": null,
    "type": "appartement",
-   "loyer": 800,
+   "loyer": 725,
    "pieces": 2,
    "chambres": 1,
    "surface": 36.49,
    "meuble": true,
-   "photo": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/c5cc6e7a-60be-4fc3-aef8-21c28c011479--7256945d-7887-4c7b-8331-d72c430ed553.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=f43e41c407cc6c95800b416ba85787c6bd48da5b",
+   "photo": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/c5cc6e7a-60be-4fc3-aef8-21c28c011479--f3e0f69e-13f1-4360-a446-459a450293f3.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=aa87a8d7e70b773491e1d748a7ca7d791e268962",
    "publie": "2025-11-19",
    "saisonnier": false,
    "extrait": "Appartement à louer à Soustons",
    "vu_le": "2026-11-03T12:13:42+00:00",
    "actif": true,
+   "ancien_loyer": 800,
    "agence": "Orpi Mone Martinaud Gestion Soustons",
    "dispo": null,
    "tel": "05 58 41 12 90",
