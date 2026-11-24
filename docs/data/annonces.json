@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-24T08:59:49+00:00",
+ "maj": "2026-11-24T09:19:55+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,19 +17,19 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-24T08:59:49+00:00",
+   "ok_le": "2026-11-24T09:19:55+00:00",
    "nb": 20
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-24T08:59:49+00:00",
-   "nb": 13
+   "ok_le": "2026-11-24T09:19:55+00:00",
+   "nb": 12
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-24T08:59:49+00:00",
+   "ok_le": "2026-11-24T09:19:55+00:00",
    "nb": 3
   }
  },
@@ -571,7 +571,7 @@
    "saisonnier": false,
    "extrait": "Cette photo présente une cuisine fonctionnelle et lumineuse, équipée d'un réfrigérateur, d'un four, de plaques de cuisson et de rangements. Les fenêtres offrent une belle luminosité.\nAdour Océan - Vieux-Boucau-les-Bains",
    "vu_le": "2026-11-03T12:13:42+00:00",
-   "actif": true,
+   "actif": false,
    "ancien_loyer": 700,
    "agence": "Orpi Adour Ocean",
    "dispo": null,
@@ -583,7 +583,8 @@
     "meuble",
     "publie",
     "tel"
-   ]
+   ],
+   "retire_le": "2026-11-24T09:19:55+00:00"
   },
   {
    "id": "bienici:guy-hoquet-immo-facile-1866724",
