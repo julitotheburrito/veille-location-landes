@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-25T09:08:28+00:00",
+ "maj": "2026-11-25T10:29:50+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,23 +17,51 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-25T09:08:28+00:00",
-   "nb": 21
+   "ok_le": "2026-11-25T10:29:50+00:00",
+   "nb": 22
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-25T09:08:28+00:00",
+   "ok_le": "2026-11-25T10:29:50+00:00",
    "nb": 12
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-25T09:08:28+00:00",
+   "ok_le": "2026-11-25T10:29:50+00:00",
    "nb": 3
   }
  },
  "annonces": [
+  {
+   "id": "bienici:hektor-landifornia-1380",
+   "source": "Bien'ici",
+   "url": "https://www.bienici.com/annonce/hektor-landifornia-1380",
+   "titre": "Location appartement T3 avec terrasse à Vieux-Boucau-Les-Bai",
+   "ville": "Vieux-Boucau-les-Bains",
+   "cp": "40480",
+   "type": "appartement",
+   "loyer": 1100,
+   "pieces": 3,
+   "chambres": 2,
+   "surface": 67,
+   "meuble": null,
+   "photo": "https://file.bienici.com/photo/hektor-landifornia-1380_landifornia.staticlbi.com_original_images_biens_1_e906a05fc340d9033d66b01c8c705bdb_photo_5de381e0ac158b45a5e775751e962843.jpg",
+   "publie": "2026-11-25T09:54:38.995Z",
+   "saisonnier": false,
+   "extrait": "À Vieux-Boucau-Les-Bains, au coeur de la côte landaise, découvrez cet appartement T3 récent à louer, idéalement situé entre l'océan Atlantique, le lac marin et le centre-ville. Implanté dans une résidence moderne livrée ",
+   "vu_le": "2026-11-25T10:29:50+00:00",
+   "actif": true,
+   "agence": "LANDIFORNIA IMMOBILIER",
+   "tel": "0684187890",
+   "dispo": null,
+   "details": [
+    "agence",
+    "dispo",
+    "tel"
+   ]
+  },
   {
    "id": "bienici:ag753199-562513754",
    "source": "Bien'ici",
