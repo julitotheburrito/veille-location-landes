@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-25T11:39:50+00:00",
+ "maj": "2026-11-25T11:49:49+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,19 +17,19 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-25T11:39:50+00:00",
+   "ok_le": "2026-11-25T11:49:49+00:00",
    "nb": 22
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-25T11:39:50+00:00",
-   "nb": 12
+   "ok_le": "2026-11-25T11:49:49+00:00",
+   "nb": 13
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-25T11:39:50+00:00",
+   "ok_le": "2026-11-25T11:49:49+00:00",
    "nb": 3
   }
  },
@@ -1112,17 +1112,18 @@
    "ville": "Seignosse",
    "cp": null,
    "type": "maison",
-   "loyer": 1635,
+   "loyer": 1495,
    "pieces": 4,
    "chambres": 3,
    "surface": 96.62,
    "meuble": false,
-   "photo": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/1532a52d-a2a0-4235-9124-a4a279437d51--ec2f2bcf-1b71-4ad6-bfa7-950fc88221d1.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=2623e9d8f138722c7f03171d71d182ee15b3c181",
+   "photo": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/1532a52d-a2a0-4235-9124-a4a279437d51--f0b8ccba-321a-444d-ae10-cad1ff035e19.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=37080c4c19e3c78e96d6a90b4ea68174889a3e69",
    "publie": "2026-09-17",
    "saisonnier": false,
-   "extrait": "Cette propriété offre un cadre de vie exceptionnel avec un jardin luxuriant et une terrasse spacieuse, idéale pour profiter des beaux jours. La maison, de style traditionnel, s\\'intègre parfaitement à son environnement v",
+   "extrait": "Cette photo présente une terrasse ensoleillée avec un mobilier de jardin en bois, un parasol et une balustrade, offrant une vue sur un jardin verdoyant et luxuriant. L'espace extérieur est idéal pour se détendre et profi",
    "vu_le": "2026-11-03T12:13:42+00:00",
-   "actif": false,
+   "actif": true,
+   "ancien_loyer": 1635,
    "agence": "Orpi Adour Ocean",
    "dispo": null,
    "tel": "05 59 52 95 90",
@@ -1133,8 +1134,7 @@
     "meuble",
     "publie",
     "tel"
-   ],
-   "retire_le": "2026-11-24T09:29:48+00:00"
+   ]
   },
   {
    "id": "orpi:b203f159-dfa8-4ae2-9d48-15e83be6ce05",
