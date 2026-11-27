@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-27T15:19:48+00:00",
+ "maj": "2026-11-27T15:29:50+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,19 +17,19 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-27T15:19:48+00:00",
+   "ok_le": "2026-11-27T15:29:50+00:00",
    "nb": 21
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-27T15:19:48+00:00",
+   "ok_le": "2026-11-27T15:29:50+00:00",
    "nb": 13
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-27T15:19:48+00:00",
+   "ok_le": "2026-11-27T15:29:50+00:00",
    "nb": 3
   }
  },
@@ -993,7 +993,7 @@
    "ville": "Soustons",
    "cp": null,
    "type": "appartement",
-   "loyer": 800,
+   "loyer": 750,
    "pieces": 2,
    "chambres": 1,
    "surface": 65.09,
@@ -1004,6 +1004,7 @@
    "extrait": "Cette cuisine moderne et fonctionnelle dispose de nombreux rangements, d'un plan de travail en bois, d'une plaque de cuisson et d'un four. L'évier est intégré au plan de travail. La crédence verte apporte une touche de c",
    "vu_le": "2026-11-03T12:13:42+00:00",
    "actif": true,
+   "ancien_loyer": 800,
    "agence": "Orpi Mone Martinaud Gestion Soustons",
    "dispo": null,
    "tel": "05 58 41 12 90",
