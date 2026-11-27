@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-27T12:19:49+00:00",
+ "maj": "2026-11-27T15:19:48+00:00",
  "communes": [
   "Moliets-et-Maa",
   "Soustons",
@@ -17,19 +17,19 @@
   "bienici": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-27T12:19:49+00:00",
+   "ok_le": "2026-11-27T15:19:48+00:00",
    "nb": 21
   },
   "orpi": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-27T12:19:49+00:00",
+   "ok_le": "2026-11-27T15:19:48+00:00",
    "nb": 13
   },
   "paruvendu": {
    "echecs": 0,
    "erreur": null,
-   "ok_le": "2026-11-27T12:19:49+00:00",
+   "ok_le": "2026-11-27T15:19:48+00:00",
    "nb": 3
   }
  },
@@ -548,7 +548,7 @@
    "ville": "Soustons",
    "cp": null,
    "type": "appartement",
-   "loyer": 780,
+   "loyer": 750,
    "pieces": 2,
    "chambres": 1,
    "surface": 50.5,
@@ -559,6 +559,7 @@
    "extrait": "Ce studio lumineux et moderne offre un espace de vie ouvert avec une cuisine équipée. Idéalement situé, il dispose d'une grande fenêtre pour une luminosité optimale.\nMoné Martinaud Gestion Soustons - Soustons",
    "vu_le": "2026-11-04T08:49:48+00:00",
    "actif": true,
+   "ancien_loyer": 780,
    "agence": "Orpi Mone Martinaud Gestion Soustons",
    "dispo": null,
    "tel": "05 58 41 12 90",
